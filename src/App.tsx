@@ -19,7 +19,7 @@ import CEO from './pages/CEO';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/rajasthan-glamour-week-2026">
       <Routes>
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/ceo" element={<CEO />} />
