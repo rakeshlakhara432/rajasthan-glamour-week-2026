@@ -43,15 +43,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-12 group">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-royal-dark/40 backdrop-blur-md/5 flex items-center justify-center shrink-0 border border-gold/10 transition-all duration-700 group-hover:bg-gold group-hover:scale-110 shadow-2xl">
-                      <Phone className="text-gold transition-colors group-hover:text-premium-white" size={28} />
-                    </div>
-                    <div className="space-y-3">
-                      <p className="text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.5em] text-white/30 font-black">Direct Channel 03</p>
-                      <p className="text-xl md:text-2xl font-black uppercase tracking-tighter text-white group-hover:text-gold transition-colors">7976754073</p>
-                    </div>
-                  </div>
+
 
                   <div className="flex items-start space-x-12 group">
                     <div className="w-16 h-16 md:w-20 md:h-20 bg-royal-dark/40 backdrop-blur-md/5 flex items-center justify-center shrink-0 border border-gold/10 transition-all duration-700 group-hover:bg-gold group-hover:scale-110 shadow-2xl">
