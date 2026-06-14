@@ -76,23 +76,23 @@ export default function Home() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.2]);
 
   const images = {
-    hero: "/src/assets/images/hero_fashion_desert_1780979678685.png",
-    runway: "/src/assets/images/runway_glamour_1780979695640.png",
-    detail: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png",
-    backstage: "/src/assets/images/fashion_backstage_1780979727578.png",
+    hero: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png",
+    runway: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png",
+    detail: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png",
+    backstage: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png",
     videoPlaceholder: "https://assets.mixkit.co/videos/preview/mixkit-fashion-show-on-the-runway-12561-large.mp4"
   };
 
   const highlights = [
-    { title: "Imperial Silk Showcase", category: "Runway", image: "/src/assets/images/runway_glamour_1780979695640.png" },
-    { title: "Desert Twilight Gala", category: "Gala", image: "/src/assets/images/hero_fashion_desert_1780979678685.png" },
-    { title: "Backstage Secrets", category: "Behind the Scenes", image: "/src/assets/images/fashion_backstage_1780979727578.png" }
+    { title: "Imperial Silk Showcase", category: "Runway", image: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png" },
+    { title: "Desert Twilight Gala", category: "Gala", image: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png" },
+    { title: "Backstage Secrets", category: "Behind the Scenes", image: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png" }
   ];
 
   const celebrities = [
-    { name: "Ananya Sharma", role: "Showstopper", image: "/src/assets/images/runway_glamour_1780979695640.png" },
-    { name: "Vikram Rathore", role: "Guest of Honor", image: "/src/assets/images/hero_fashion_desert_1780979678685.png" },
-    { name: "Sanya Gupta", role: "Global Influencer", image: "/src/assets/images/fashion_backstage_1780979727578.png" }
+    { name: "Ananya Sharma", role: "Showstopper", image: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png" },
+    { name: "Vikram Rathore", role: "Guest of Honor", image: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png" },
+    { name: "Sanya Gupta", role: "Global Influencer", image: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png" }
   ];
 
   return (

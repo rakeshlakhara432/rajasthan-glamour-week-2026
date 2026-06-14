@@ -46,8 +46,8 @@ export default function CEO() {
   };
 
   const images = {
-    ceo: "/src/assets/images/hero_fashion_desert_1780979678685.png", // Reusing hero image for CEO placeholder
-    signature: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png"
+    ceo: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png", // Reusing hero image for CEO placeholder
+    signature: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png"
   };
 
   return (

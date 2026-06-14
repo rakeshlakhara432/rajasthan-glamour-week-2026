@@ -35,11 +35,11 @@ export default function ModelManager() {
   const [selectedApp, setSelectedApp] = useState<ModelApplication | null>(null);
 
   const applications: ModelApplication[] = [
-    { id: 'APP-001', name: 'Suhana Sheikh', category: 'Female Portfolio', height: '180 cm', date: '2026-06-08', status: 'pending', image: "/src/assets/images/hero_fashion_desert_1780979678685.png", rating: 4.8 },
-    { id: 'APP-002', name: 'Vikram Singh', category: 'Male Portfolio', height: '188 cm', date: '2026-06-07', status: 'approved', image: "/src/assets/images/runway_glamour_1780979695640.png", rating: 5.0 },
-    { id: 'APP-003', name: 'Isha Mehra', category: 'Female Portfolio', height: '175 cm', date: '2026-06-05', status: 'rejected', image: "/src/assets/images/fashion_backstage_1780979727578.png", rating: 3.2 },
-    { id: 'APP-004', name: 'Arjun Rathore', category: 'Male Portfolio', height: '190 cm', date: '2026-06-04', status: 'pending', image: "/src/assets/images/hero_fashion_desert_1780979678685.png", rating: 4.5 },
-    { id: 'APP-005', name: 'Maya Kapoor', category: 'Female Portfolio', height: '178 cm', date: '2026-06-02', status: 'info_requested', image: "/src/assets/images/runway_glamour_1780979695640.png", rating: 4.7 }
+    { id: 'APP-001', name: 'Suhana Sheikh', category: 'Female Portfolio', height: '180 cm', date: '2026-06-08', status: 'pending', image: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png", rating: 4.8 },
+    { id: 'APP-002', name: 'Vikram Singh', category: 'Male Portfolio', height: '188 cm', date: '2026-06-07', status: 'approved', image: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png", rating: 5.0 },
+    { id: 'APP-003', name: 'Isha Mehra', category: 'Female Portfolio', height: '175 cm', date: '2026-06-05', status: 'rejected', image: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png", rating: 3.2 },
+    { id: 'APP-004', name: 'Arjun Rathore', category: 'Male Portfolio', height: '190 cm', date: '2026-06-04', status: 'pending', image: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png", rating: 4.5 },
+    { id: 'APP-005', name: 'Maya Kapoor', category: 'Female Portfolio', height: '178 cm', date: '2026-06-02', status: 'info_requested', image: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png", rating: 4.7 }
   ];
 
   const getStatusColor = (status: string) => {

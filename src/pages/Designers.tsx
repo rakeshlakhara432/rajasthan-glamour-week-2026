@@ -6,19 +6,19 @@ export default function Designers() {
     {
       name: "Aditya Marwar",
       style: "Heritage Couture",
-      image: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png",
+      image: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png",
       description: "Specializing in revival of 18th-century Marwari wedding attire with a modern structural twist."
     },
     {
       name: "Sana Khayyam",
       style: "Avant-Garde Ethic",
-      image: "/src/assets/images/hero_fashion_desert_1780979678685.png",
+      image: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png",
       description: "Known for blending nomadic desert silhouettes with high-tech sustainable fabrics."
     },
     {
       name: "Royal Rajpoot Studio",
       style: "Imperial Luxury",
-      image: "/src/assets/images/runway_glamour_1780979695640.png",
+      image: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png",
       description: "The official designers for the Jaipur Royal family, bringing centuries of lineage to the runway."
     }
   ];

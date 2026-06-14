@@ -36,10 +36,10 @@ export default function Models() {
   const [regSuccess, setRegSuccess] = useState(false);
 
   const images = {
-    model1: "/src/assets/images/hero_fashion_desert_1780979678685.png",
-    model2: "/src/assets/images/runway_glamour_1780979695640.png",
-    model3: "/src/assets/images/fashion_backstage_1780979727578.png",
-    featured: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png"
+    model1: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png",
+    model2: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png",
+    model3: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png",
+    featured: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png"
   };
 
   const models: Model[] = [

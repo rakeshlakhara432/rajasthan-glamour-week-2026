@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 export default function About() {
   const images = {
-    backstage: "/src/assets/images/fashion_backstage_1780979727578.png",
-    detail: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png",
-    hero: "/src/assets/images/hero_fashion_desert_1780979678685.png"
+    backstage: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png",
+    detail: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png",
+    hero: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png"
   };
 
   const timeline = [

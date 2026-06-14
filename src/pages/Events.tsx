@@ -46,10 +46,10 @@ export default function Events() {
   const [isRegistered, setIsRegistered] = useState(false);
 
   const images = {
-    runway: "/src/assets/images/runway_glamour_1780979695640.png",
-    detail: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png",
-    hero: "/src/assets/images/hero_fashion_desert_1780979678685.png",
-    backstage: "/src/assets/images/fashion_backstage_1780979727578.png"
+    runway: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png",
+    detail: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png",
+    hero: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png",
+    backstage: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png"
   };
 
   const allEvents: Event[] = [

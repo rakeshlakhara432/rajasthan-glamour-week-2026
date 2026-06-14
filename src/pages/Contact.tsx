@@ -113,7 +113,7 @@ export default function Contact() {
       {/* Map Experience */}
       <section className="h-[500px] md:h-[600px] bg-[#0a0a0a] flex items-center justify-center relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-[3s] group">
         <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000">
-            <img src="/src/assets/images/hero_fashion_desert_1780979678685.png" className="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110" alt="Map Overlay" />
+            <img src="/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png" className="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110" alt="Map Overlay" />
         </div>
         <div className="relative z-10 text-center px-6">
             <span className="text-gold font-black uppercase tracking-[1em] text-[0.55rem] md:text-[0.6rem] mb-10 block">Global Headquarters</span>

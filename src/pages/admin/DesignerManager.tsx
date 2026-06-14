@@ -32,10 +32,10 @@ export default function DesignerManager() {
   const [selectedDesigner, setSelectedDesigner] = useState<Designer | null>(null);
 
   const designers: Designer[] = [
-    { id: 'DES-001', name: 'Sabyasachi Mukherjee', collection: 'Heritage Monsoons', status: 'active', slot: 'Day 1 - Grand Finale', image: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png", views: '4.2K' },
-    { id: 'DES-002', name: 'Anita Dongre', collection: 'Desert Hues 2026', status: 'active', slot: 'Day 2 - Main Show', image: "/src/assets/images/hero_fashion_desert_1780979678685.png", views: '3.1K' },
-    { id: 'DES-003', name: 'Manish Malhotra', collection: 'Imperial Silks', status: 'pending', slot: 'TBD', image: "/src/assets/images/runway_glamour_1780979695640.png", views: '1.8K' },
-    { id: 'DES-004', name: 'Ritu Kumar', collection: 'Vintage Rajasthan', status: 'draft', slot: 'TBD', image: "/src/assets/images/fashion_backstage_1780979727578.png", views: '0.5K' },
+    { id: 'DES-001', name: 'Sabyasachi Mukherjee', collection: 'Heritage Monsoons', status: 'active', slot: 'Day 1 - Grand Finale', image: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png", views: '4.2K' },
+    { id: 'DES-002', name: 'Anita Dongre', collection: 'Desert Hues 2026', status: 'active', slot: 'Day 2 - Main Show', image: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png", views: '3.1K' },
+    { id: 'DES-003', name: 'Manish Malhotra', collection: 'Imperial Silks', status: 'pending', slot: 'TBD', image: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png", views: '1.8K' },
+    { id: 'DES-004', name: 'Ritu Kumar', collection: 'Vintage Rajasthan', status: 'draft', slot: 'TBD', image: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png", views: '0.5K' },
   ];
 
   return (

@@ -30,15 +30,15 @@ export default function Gallery() {
   const [viewMode, setViewMode] = useState<'photo' | 'video'>('photo');
 
   const media: MediaItem[] = [
-    { id: '1', url: "/src/assets/images/hero_fashion_desert_1780979678685.png", title: "Desert Sunset", category: "Editorial", type: 'image', description: "Capturing the golden hour in the heart of the Thar desert." },
-    { id: '2', url: "/src/assets/images/runway_glamour_1780979695640.png", title: "Palace Runway", category: "Runway", type: 'image', description: "The grand opening show featuring imperial silks." },
-    { id: '3', url: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png", title: "Intricate Gold", category: "Collections", type: 'image', description: "Close-up of the master craftsmanship in Zardozi." },
-    { id: '4', url: "/src/assets/images/fashion_backstage_1780979727578.png", title: "The Preparation", category: "Backstage", type: 'image', description: "Behind the scenes with the elite styling team." },
-    { id: '5', url: "/src/assets/images/runway_glamour_1780979695640.png", title: "Showstopper Walk", category: "Celebrities", type: 'image', description: "Celebrity appearances on the final night." },
-    { id: '6', url: "/src/assets/images/hero_fashion_desert_1780979678685.png", title: "Thar Couture", category: "Editorial", type: 'image' },
-    { id: '7', url: "/src/assets/images/fashion_backstage_1780979727578.png", title: "Highlights 2026", category: "Interviews", type: 'video' },
-    { id: '8', url: "/src/assets/images/runway_glamour_1780979695640.png", title: "Designer Talk", category: "Interviews", type: 'video' },
-    { id: '9', url: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png", title: "Event Highlights", category: "Highlights", type: 'video' }
+    { id: '1', url: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png", title: "Desert Sunset", category: "Editorial", type: 'image', description: "Capturing the golden hour in the heart of the Thar desert." },
+    { id: '2', url: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png", title: "Palace Runway", category: "Runway", type: 'image', description: "The grand opening show featuring imperial silks." },
+    { id: '3', url: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png", title: "Intricate Gold", category: "Collections", type: 'image', description: "Close-up of the master craftsmanship in Zardozi." },
+    { id: '4', url: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png", title: "The Preparation", category: "Backstage", type: 'image', description: "Behind the scenes with the elite styling team." },
+    { id: '5', url: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png", title: "Showstopper Walk", category: "Celebrities", type: 'image', description: "Celebrity appearances on the final night." },
+    { id: '6', url: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png", title: "Thar Couture", category: "Editorial", type: 'image' },
+    { id: '7', url: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png", title: "Highlights 2026", category: "Interviews", type: 'video' },
+    { id: '8', url: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png", title: "Designer Talk", category: "Interviews", type: 'video' },
+    { id: '9', url: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png", title: "Event Highlights", category: "Highlights", type: 'video' }
   ];
 
   const categories = ["All", "Runway", "Editorial", "Backstage", "Collections", "Celebrities", "Interviews", "Highlights"];

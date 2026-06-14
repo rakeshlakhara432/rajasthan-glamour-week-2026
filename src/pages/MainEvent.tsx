@@ -60,10 +60,10 @@ export default function MainEvent() {
   const [voted, setVoted] = useState(false);
 
   const images = {
-    hero: "/src/assets/images/hero_fashion_desert_1780979678685.png",
-    runway: "/src/assets/images/runway_glamour_1780979695640.png",
-    detail: "/src/assets/images/rajasthan_embroidery_detail_1780979709712.png",
-    backstage: "/src/assets/images/fashion_backstage_1780979727578.png"
+    hero: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png",
+    runway: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png",
+    detail: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png",
+    backstage: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png"
   };
 
   const schedule = [
