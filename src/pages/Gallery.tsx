@@ -38,7 +38,8 @@ export default function Gallery() {
     { id: '6', url: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png", title: "Thar Couture", category: "Editorial", type: 'image' },
     { id: '7', url: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png", title: "Highlights 2026", category: "Interviews", type: 'video' },
     { id: '8', url: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png", title: "Designer Talk", category: "Interviews", type: 'video' },
-    { id: '9', url: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png", title: "Event Highlights", category: "Highlights", type: 'video' }
+    { id: '9', url: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png", title: "Event Highlights", category: "Highlights", type: 'video' },
+    { id: '10', url: "/rajasthan-glamour-week-2026/images/rajasthani_fashion_show.png", title: "Rajasthani Look", category: "Runway", type: 'image', description: "A high-fashion runway show featuring modern Rajasthani traditional clothing." }
   ];
 
   const categories = ["All", "Runway", "Editorial", "Backstage", "Collections", "Celebrities", "Interviews", "Highlights"];
