@@ -1,0 +1,8 @@
+{
+  "name": "Rajasthan Glamour Week",
+  "description": "Premium fashion show event agency showcasing the fusion of traditional Rajasthani heritage and contemporary glamour.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
