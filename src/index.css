@@ -5,20 +5,25 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Playfair Display", serif;
   
-  --color-gold: #C5A059;
-  --color-gold-light: #E5C78F;
-  --color-gold-dark: #8C6A30;
-  --color-premium-black: #0A0A0A;
-  --color-premium-white: #FFFFFF;
+  --color-gold: #D4AF37;
+  --color-gold-light: #FDF4E3;
+  --color-gold-dark: #997A15;
+  --color-premium-black: #050505;
+  --color-premium-white: #FAFAFA;
+  --color-royal-dark: #120508;
+  --color-royal-burgundy: #380814;
+  --color-royal-crimson: #631222;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-premium-white text-premium-black antialiased text-[0.85rem] leading-relaxed;
+    @apply font-sans bg-royal-dark text-premium-white antialiased text-[0.85rem] leading-relaxed overflow-x-hidden;
+    background-image: radial-gradient(circle at top, rgba(56, 8, 20, 0.4) 0%, rgba(18, 5, 8, 1) 100%);
+    background-attachment: fixed;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-balance;
+    @apply font-display tracking-wide text-balance;
   }
 }
 
@@ -28,7 +33,7 @@
 
 .nav-link::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500;
+  @apply absolute bottom-0 left-0 w-0 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent transition-all duration-700;
 }
 
 .nav-link:hover::after {
@@ -36,5 +41,15 @@
 }
 
 .gold-gradient {
-  background: linear-gradient(135deg, #C5A059 0%, #E5C78F 50%, #C5A059 100%);
+  background: linear-gradient(135deg, #B38728 0%, #FBF5B7 30%, #D4AF37 50%, #AA771C 70%, #FBF5B7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #B38728 0%, #FBF5B7 30%, #D4AF37 50%, #AA771C 70%, #FBF5B7 100%);
+}
+
+.royal-border {
+  @apply border border-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.1)];
 }

@@ -44,7 +44,7 @@ export default function Header() {
         className={cn(
           "transition-all duration-700 ease-in-out",
           isScrolled || isOpen 
-            ? "py-2 bg-premium-black/90 backdrop-blur-md border-b border-gold/10 shadow-xl" 
+            ? "py-2 bg-royal-dark/95 backdrop-blur-md border-b border-gold/20 shadow-[0_4px_30px_rgba(212,175,55,0.1)]" 
             : "py-4 bg-transparent border-b border-transparent"
         )}
       >
@@ -93,7 +93,7 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-white/10">
+            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gold/20">
               <Instagram size={14} className="text-gold/40 hover:text-gold transition-colors cursor-pointer" />
               <Facebook size={14} className="text-gold/40 hover:text-gold transition-colors cursor-pointer" />
               <Twitter size={14} className="text-gold/40 hover:text-gold transition-colors cursor-pointer" />
@@ -118,7 +118,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-premium-black z-40 flex flex-col pt-32"
+            className="fixed inset-0 bg-royal-dark z-40 flex flex-col pt-32"
           >
             <div className="flex-grow overflow-y-auto px-12 py-10">
               <div className="space-y-8">
@@ -144,13 +144,13 @@ export default function Header() {
               </div>
             </div>
             
-            <div className="p-12 border-t border-white/5 bg-white/5 backdrop-blur-md">
+            <div className="p-12 border-t border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-md">
               <div className="flex justify-between items-center">
-                <span className="text-[0.6rem] tracking-[0.4em] uppercase text-stone-500">Connect</span>
+                <span className="text-[0.6rem] tracking-[0.4em] uppercase text-white/60">Connect</span>
                 <div className="flex space-x-8">
-                  <Instagram size={18} className="text-stone-400 hover:text-gold transition-colors" />
-                  <Facebook size={18} className="text-stone-400 hover:text-gold transition-colors" />
-                  <Twitter size={18} className="text-stone-400 hover:text-gold transition-colors" />
+                  <Instagram size={18} className="text-white/40 hover:text-gold transition-colors" />
+                  <Facebook size={18} className="text-white/40 hover:text-gold transition-colors" />
+                  <Twitter size={18} className="text-white/40 hover:text-gold transition-colors" />
                 </div>
               </div>
             </div>

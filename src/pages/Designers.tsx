@@ -24,8 +24,8 @@ export default function Designers() {
   ];
 
   return (
-    <div className="min-h-screen pt-24 bg-[#0a0a0a]">
-      <section className="py-40 bg-[#0a0a0a] text-white relative overflow-hidden">
+    <div className="min-h-screen pt-24 bg-transparent">
+      <section className="py-40 bg-transparent text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(212,175,55,0.06),transparent_60%)]" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl pt-20">
@@ -38,7 +38,7 @@ export default function Designers() {
         </div>
       </section>
 
-      <section className="py-40 bg-white relative">
+      <section className="py-40 bg-royal-dark/40 backdrop-blur-md relative">
         <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-l from-transparent via-gold/20 to-transparent" />
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 gap-48 md:gap-64">
@@ -60,7 +60,7 @@ export default function Designers() {
                       className="w-full h-full object-cover grayscale transition-all duration-[2.5s] ease-out group-hover:grayscale-0 group-hover:scale-110"
                     />
                   </div>
-                  <div className={`absolute bottom-10 ${idx % 2 === 0 ? '-right-10' : '-left-10'} bg-[#0a0a0a] px-10 py-6 md:px-12 md:py-8 shadow-2xl hidden lg:block border border-gold/30`}>
+                  <div className={`absolute bottom-10 ${idx % 2 === 0 ? '-right-10' : '-left-10'} bg-transparent px-10 py-6 md:px-12 md:py-8 shadow-2xl hidden lg:block border border-gold/30`}>
                       <span className="text-gold text-[0.6rem] font-black uppercase tracking-[0.5em]">{designer.style}</span>
                   </div>
                 </div>
@@ -68,21 +68,21 @@ export default function Designers() {
                 <div className="w-full lg:w-2/5 space-y-10 md:space-y-12">
                   <div className="relative">
                     <span className="text-gold font-black uppercase tracking-[0.4em] text-[0.6rem] mb-4 block">Archive 0{idx + 1}</span>
-                    <h2 className="text-5xl md:text-8xl font-display italic leading-none text-[#0a0a0a] tracking-tight">{designer.name}</h2>
+                    <h2 className="text-5xl md:text-8xl font-display italic leading-none text-premium-white tracking-tight">{designer.name}</h2>
                   </div>
                   <div className="space-y-8">
-                    <p className="text-stone-400 leading-relaxed text-lg md:text-xl font-light italic">
+                    <p className="text-white/40 leading-relaxed text-lg md:text-xl font-light italic">
                         {designer.description}
                     </p>
                     <div className="h-[1px] w-24 bg-gold" />
                     <div className="flex flex-wrap items-center gap-8 md:gap-12 opacity-30">
-                        <span className="text-[0.65rem] font-black uppercase tracking-[0.4em] text-premium-black">Paris</span>
-                        <span className="text-[0.65rem] font-black uppercase tracking-[0.4em] text-premium-black">Jaipur</span>
-                        <span className="text-[0.65rem] font-black uppercase tracking-[0.4em] text-premium-black">Dubai</span>
+                        <span className="text-[0.65rem] font-black uppercase tracking-[0.4em] text-premium-white">Paris</span>
+                        <span className="text-[0.65rem] font-black uppercase tracking-[0.4em] text-premium-white">Jaipur</span>
+                        <span className="text-[0.65rem] font-black uppercase tracking-[0.4em] text-premium-white">Dubai</span>
                     </div>
                   </div>
                   <div className="pt-8">
-                    <button className="w-full md:w-auto px-12 py-6 md:px-14 md:py-7 bg-[#0a0a0a] text-white text-[0.65rem] font-black uppercase tracking-[0.6em] hover:bg-gold hover:text-white transition-all flex items-center justify-center shadow-2xl">
+                    <button className="w-full md:w-auto px-12 py-6 md:px-14 md:py-7 bg-transparent text-white text-[0.65rem] font-black uppercase tracking-[0.6em] hover:bg-gold hover:text-white transition-all flex items-center justify-center shadow-2xl">
                       Examine Portfolio <ExternalLink size={14} className="ml-5" />
                     </button>
                   </div>

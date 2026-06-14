@@ -51,10 +51,10 @@ export default function CEO() {
   };
 
   return (
-    <div className="min-h-screen pt-24 bg-[#0a0a0a] text-white">
+    <div className="min-h-screen pt-24 bg-transparent text-white">
       {/* CEO Profile Section */}
       <section className="relative min-h-screen flex flex-col lg:flex-row overflow-hidden">
-        <div className="lg:w-1/2 h-[60vh] lg:h-screen sticky top-0 bg-[#0a0a0a] overflow-hidden">
+        <div className="lg:w-1/2 h-[60vh] lg:h-screen sticky top-0 bg-transparent overflow-hidden">
           <img 
             src={images.ceo} 
             className="w-full h-full object-cover grayscale opacity-40 scale-110" 
@@ -72,7 +72,7 @@ export default function CEO() {
           </div>
         </div>
 
-        <div className="lg:w-1/2 p-12 md:p-32 bg-[#0a0a0a] relative flex flex-col justify-center">
+        <div className="lg:w-1/2 p-12 md:p-32 bg-transparent relative flex flex-col justify-center">
             <div className="max-w-xl space-y-16">
                <div className="space-y-8">
                   <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] block">Executive Manifesto</span>
@@ -110,7 +110,7 @@ export default function CEO() {
                <div className="pt-12">
                   <button 
                     onClick={() => setShowLogin(true)}
-                    className="flex items-center space-x-12 px-12 py-8 bg-white/5 border border-white/10 hover:border-gold hover:bg-gold/5 transition-all group"
+                    className="flex items-center space-x-12 px-12 py-8 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/20 hover:border-gold hover:bg-gold/5 transition-all group"
                   >
                      <div className="text-left">
                         <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/30 block mb-2 group-hover:text-gold transition-colors">Internal Authorization</span>
@@ -130,13 +130,13 @@ export default function CEO() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-[#0a0a0a]/95 backdrop-blur-3xl"
+            className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-transparent/95 backdrop-blur-3xl"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="w-full max-w-lg bg-[#0e0e0e] border border-white/5 p-12 md:p-20 shadow-2xl relative overflow-hidden"
+              className="w-full max-w-lg bg-[#0e0e0e] border border-gold/10 p-12 md:p-20 shadow-2xl relative overflow-hidden"
             >
               {/* Background accent */}
               <div className="absolute -top-32 -right-32 w-64 h-64 bg-gold/10 rounded-full blur-3xl opacity-20" />
@@ -177,7 +177,7 @@ export default function CEO() {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="ADMIN IDENTIFIER..."
-                          className="w-full bg-white/5 border border-white/5 pl-16 pr-8 py-5 text-[0.7rem] font-black uppercase tracking-[0.2em] text-white outline-none focus:border-gold/30 transition-all"
+                          className="w-full bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 pl-16 pr-8 py-5 text-[0.7rem] font-black uppercase tracking-[0.2em] text-white outline-none focus:border-gold/30 transition-all"
                        />
                     </div>
                     <div className="relative group">
@@ -188,7 +188,7 @@ export default function CEO() {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           placeholder="ACCESS KEY..."
-                          className="w-full bg-white/5 border border-white/5 pl-16 pr-16 py-5 text-[0.7rem] font-black uppercase tracking-[0.2em] text-white outline-none focus:border-gold/30 transition-all"
+                          className="w-full bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 pl-16 pr-16 py-5 text-[0.7rem] font-black uppercase tracking-[0.2em] text-white outline-none focus:border-gold/30 transition-all"
                        />
                        <button 
                          type="button"
@@ -203,13 +203,13 @@ export default function CEO() {
                  <button 
                    type="submit" 
                    disabled={isLoading}
-                   className="w-full py-8 bg-gold text-[#0a0a0a] font-black uppercase tracking-[1em] text-[0.8rem] hover:bg-white transition-all shadow-2xl relative flex items-center justify-center overflow-hidden"
+                   className="w-full py-8 bg-gold text-premium-white font-black uppercase tracking-[1em] text-[0.8rem] hover:bg-royal-dark/40 backdrop-blur-md transition-all shadow-2xl relative flex items-center justify-center overflow-hidden"
                  >
                    {isLoading ? (
                      <div className="flex space-x-2">
-                        <div className="w-1.5 h-1.5 bg-[#0a0a0a] rounded-full animate-bounce" />
-                        <div className="w-1.5 h-1.5 bg-[#0a0a0a] rounded-full animate-bounce [animation-delay:0.2s]" />
-                        <div className="w-1.5 h-1.5 bg-[#0a0a0a] rounded-full animate-bounce [animation-delay:0.4s]" />
+                        <div className="w-1.5 h-1.5 bg-transparent rounded-full animate-bounce" />
+                        <div className="w-1.5 h-1.5 bg-transparent rounded-full animate-bounce [animation-delay:0.2s]" />
+                        <div className="w-1.5 h-1.5 bg-transparent rounded-full animate-bounce [animation-delay:0.4s]" />
                      </div>
                    ) : (
                      <>
@@ -229,7 +229,7 @@ export default function CEO() {
         )}
       </AnimatePresence>
 
-      <section className="py-40 bg-white">
+      <section className="py-40 bg-royal-dark/40 backdrop-blur-md">
           <div className="container mx-auto px-6">
              <div className="flex flex-col md:flex-row gap-24 items-center">
                 <div className="md:w-1/2">
@@ -237,17 +237,17 @@ export default function CEO() {
                 </div>
                 <div className="md:w-1/2 space-y-12">
                    <div className="w-20 h-2 bg-gold" />
-                   <h3 className="text-4xl font-black uppercase tracking-tighter text-[#0a0a0a] leading-none mb-8 italic">The Imperial <br />Standard</h3>
-                   <p className="text-stone-500 text-lg font-light leading-relaxed">
+                   <h3 className="text-4xl font-black uppercase tracking-tighter text-premium-white leading-none mb-8 italic">The Imperial <br />Standard</h3>
+                   <p className="text-white/60 text-lg font-light leading-relaxed">
                       Every registration, every partnership, and every digital asset is vetted by our Core Integrity Board. We maintain the highest standards of luxury and cultural respect in the digital sphere.
                    </p>
                    <div className="grid grid-cols-2 gap-8 pt-8">
                       <div>
-                         <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-stone-400 block mb-2">Vetting Protocol</span>
-                         <span className="text-xl font-black text-[#0a0a0a]">96-Hour Cycle</span>
+                         <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/40 block mb-2">Vetting Protocol</span>
+                         <span className="text-xl font-black text-premium-white">96-Hour Cycle</span>
                       </div>
                       <div>
-                         <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-stone-400 block mb-2">Security Tier</span>
+                         <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/40 block mb-2">Security Tier</span>
                          <span className="text-xl font-black text-gold">AES-256 BANKING</span>
                       </div>
                    </div>

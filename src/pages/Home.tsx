@@ -96,7 +96,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="overflow-hidden bg-[#0a0a0a]">
+    <div className="overflow-hidden bg-transparent">
       {/* Hero Section */}
       <section ref={containerRef} className="relative h-screen flex items-center overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0 z-0">
@@ -127,7 +127,7 @@ export default function Home() {
                 <span className="italic font-normal text-gold block lg:inline">MEETS</span> RUNWAY
               </h1>
               
-              <div className="flex flex-wrap gap-8 md:gap-16 mt-12 md:mt-20 pb-12 border-b border-white/5 lg:w-fit">
+              <div className="flex flex-wrap gap-8 md:gap-16 mt-12 md:mt-20 pb-12 border-b border-gold/10 lg:w-fit">
                 <div className="space-y-4">
                   <p className="text-[0.55rem] font-black uppercase tracking-[0.6em] text-white/20">The Countdown</p>
                   <CountdownTimer />
@@ -145,11 +145,11 @@ export default function Home() {
                 "Behold the intersection of ancient heritage and modern global couture."
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                <Link to="/contact" className="group px-10 py-5 bg-gold text-[#0a0a0a] font-black tracking-[0.4em] uppercase text-[0.65rem] flex items-center justify-center transition-all hover:bg-white hover:text-[#0a0a0a] shadow-2xl">
+                <Link to="/contact" className="group px-10 py-5 bg-gold text-premium-white font-black tracking-[0.4em] uppercase text-[0.65rem] flex items-center justify-center transition-all hover:bg-royal-dark/40 backdrop-blur-md hover:text-premium-white shadow-2xl">
                   Register Now
                   <ArrowRight className="ml-4 group-hover:translate-x-2 transition-transform" size={14} />
                 </Link>
-                <div className="flex items-center space-x-4 pl-4 border-l border-white/5">
+                <div className="flex items-center space-x-4 pl-4 border-l border-gold/10">
                    <Play size={16} className="text-gold fill-gold" />
                    <span className="text-[0.55rem] uppercase tracking-[0.2em] font-black text-white/50">View Trailer</span>
                 </div>
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 border-y border-white/5 relative bg-[#0a0a0a] overflow-hidden">
+      <section className="py-24 border-y border-gold/10 relative bg-transparent overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.03),transparent_50%)]" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-24">
@@ -192,15 +192,15 @@ export default function Home() {
         </div>
       </section>
       {/* Fashion Week Highlights */}
-      <section className="py-40 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-stone-50/50 -z-0" />
+      <section className="py-40 bg-royal-dark/40 backdrop-blur-md relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-royal-dark/40 backdrop-blur-md/50 -z-0" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24">
             <div className="max-w-2xl">
               <span className="text-gold font-black uppercase tracking-[0.8em] text-[0.6rem] block mb-8 underline underline-offset-[16px] decoration-gold/20">The Archive</span>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic leading-none text-[#0a0a0a]">Season <br /><span className="text-gold not-italic">Highlights</span></h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic leading-none text-premium-white">Season <br /><span className="text-gold not-italic">Highlights</span></h2>
             </div>
-            <Link to="/gallery" className="mt-8 md:mt-0 px-8 py-4 border border-[#0a0a0a]/10 text-[#0a0a0a] text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-[#0a0a0a] hover:text-white transition-all">
+            <Link to="/gallery" className="mt-8 md:mt-0 px-8 py-4 border border-[#0a0a0a]/10 text-premium-white text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-transparent hover:text-white transition-all">
                 Full Collection
             </Link>
           </div>
@@ -225,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* Join the Movement - Participants CTA */}
-      <section className="py-40 bg-[#0a0a0a] text-white relative overflow-hidden">
+      <section className="py-40 bg-transparent text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.04),transparent_70%)]" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-32">
@@ -242,14 +242,14 @@ export default function Home() {
               <motion.div
                 key={idx}
                 whileHover={{ y: -15 }}
-                className="p-12 md:p-16 border border-white/5 bg-white/5 backdrop-blur-3xl relative group text-center"
+                className="p-12 md:p-16 border border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-3xl relative group text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-8 border border-gold/20 group-hover:bg-gold group-hover:scale-110 transition-all duration-700">
-                    <role.icon size={24} className="text-gold group-hover:text-[#0a0a0a]" />
+                    <role.icon size={24} className="text-gold group-hover:text-premium-white" />
                 </div>
                 <h3 className="text-[0.6rem] font-black uppercase tracking-[0.6em] text-white/30 mb-2">{role.sub}</h3>
                 <h4 className="text-3xl font-black uppercase tracking-tighter mb-10">{role.label}</h4>
-                <Link to="/contact" className="inline-block py-4 px-8 border border-white/10 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-gold hover:border-gold transition-all">Apply Now</Link>
+                <Link to="/contact" className="inline-block py-4 px-8 border border-gold/20 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-gold hover:border-gold transition-all">Apply Now</Link>
               </motion.div>
             ))}
           </div>
@@ -257,11 +257,11 @@ export default function Home() {
       </section>
 
       {/* Celebrity Guest Showcase */}
-      <section className="py-24 bg-white relative overflow-hidden border-b border-stone-100">
+      <section className="py-24 bg-royal-dark/40 backdrop-blur-md relative overflow-hidden border-b border-gold/20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-24">
              <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] mb-6 block underline underline-offset-[12px] decoration-gold/20">The Guest List</span>
-             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase italic text-[#0a0a0a]">Imperial <br />Guests</h2>
+             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase italic text-premium-white">Imperial <br />Guests</h2>
           </div>
 
           <div className="flex flex-nowrap overflow-x-auto gap-8 pb-12 no-scrollbar">
@@ -274,7 +274,7 @@ export default function Home() {
                     <img src={celeb.image} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 </div>
                 <span className="text-gold font-black uppercase tracking-[0.3em] text-[0.55rem] block mb-1">{celeb.role}</span>
-                <h3 className="text-2xl font-black uppercase tracking-tighter text-[#0a0a0a]">{celeb.name}</h3>
+                <h3 className="text-2xl font-black uppercase tracking-tighter text-premium-white">{celeb.name}</h3>
               </motion.div>
             ))}
           </div>
@@ -282,11 +282,11 @@ export default function Home() {
       </section>
 
       {/* Sponsor/Partnership Section */}
-      <section className="py-24 bg-stone-50">
+      <section className="py-24 bg-royal-dark/40 backdrop-blur-md">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-gold font-black uppercase tracking-[0.4em] text-[0.6rem] mb-4 block">Strategic Guilds</span>
-            <p className="text-[#0a0a0a]/30 text-[0.55rem] font-black uppercase tracking-[0.2em]">Our Exclusive Partners</p>
+            <p className="text-premium-white/30 text-[0.55rem] font-black uppercase tracking-[0.2em]">Our Exclusive Partners</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 items-center opacity-40 grayscale">
             {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -302,9 +302,9 @@ export default function Home() {
       </section>
 
       {/* Latest News & Updates */}
-      <section className="py-40 bg-[#0a0a0a] text-white">
+      <section className="py-40 bg-transparent text-white">
         <div className="container mx-auto px-6">
-          <div className="flex justify-between items-end mb-24 border-b border-white/5 pb-12">
+          <div className="flex justify-between items-end mb-24 border-b border-gold/10 pb-12">
             <div>
               <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] block mb-8">The Chronicle</span>
               <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic leading-none">Latest <br /><span className="text-gold not-italic">Updates</span></h2>
@@ -325,11 +325,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="group border-b border-white/5 pb-12"
+                className="group border-b border-gold/10 pb-12"
               >
                 <div className="flex items-center space-x-6 mb-6">
                     <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-gold">{news.date}</span>
-                    <span className="text-[0.55rem] font-black uppercase tracking-[0.3em] text-white/20 border border-white/10 px-3 py-1">{news.cat}</span>
+                    <span className="text-[0.55rem] font-black uppercase tracking-[0.3em] text-white/20 border border-gold/20 px-3 py-1">{news.cat}</span>
                 </div>
                 <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 group-hover:text-gold transition-colors">{news.title}</h3>
                 <p className="text-white/30 font-light italic leading-relaxed text-lg mb-8">{news.desc}</p>
@@ -343,9 +343,9 @@ export default function Home() {
       </section>
 
       {/* Leadership Section - The Visionaries */}
-      <section className="py-40 bg-[#0a0a0a] text-white relative overflow-hidden">
+      <section className="py-40 bg-transparent text-white relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-32 border-b border-white/5 pb-12">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-32 border-b border-gold/10 pb-12">
             <div className="max-w-2xl">
               <span className="text-gold font-black uppercase tracking-[0.8em] text-[0.6rem] block mb-8 underline underline-offset-[16px] decoration-gold/20">The Visionaries</span>
               <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic leading-none">Architecting <br /><span className="text-gold not-italic">The Future</span></h2>
@@ -368,7 +368,7 @@ export default function Home() {
                 </div>
                 <div className="absolute -bottom-12 -right-12 bg-gold p-12 shadow-2xl transition-transform group-hover:-translate-y-4">
                     <p className="text-white font-black uppercase tracking-[0.4em] text-[0.6rem] mb-2">The Founder</p>
-                    <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-black">Prince Laxkar</h3>
+                    <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-white">Prince Laxkar</h3>
                 </div>
                 <div className="mt-20 max-w-sm">
                     <p className="text-white/40 text-sm italic leading-relaxed">
@@ -388,9 +388,9 @@ export default function Home() {
                 <div className="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000">
                     <img src={images.runway} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Organiser" />
                 </div>
-                <div className="absolute -bottom-12 -left-12 bg-white p-12 shadow-2xl transition-transform group-hover:-translate-y-4 border border-stone-100">
-                    <p className="text-premium-black/40 font-black uppercase tracking-[0.4em] text-[0.6rem] mb-2">The Organiser</p>
-                    <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-black">Naksh Lakhara</h3>
+                <div className="absolute -bottom-12 -left-12 bg-royal-dark/40 backdrop-blur-md p-12 shadow-2xl transition-transform group-hover:-translate-y-4 border border-gold/20">
+                    <p className="text-premium-white/40 font-black uppercase tracking-[0.4em] text-[0.6rem] mb-2">The Organiser</p>
+                    <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-white">Naksh Lakhara</h3>
                 </div>
                 <div className="mt-20 max-w-sm ml-auto text-right">
                     <p className="text-white/40 text-sm italic leading-relaxed">
@@ -403,7 +403,7 @@ export default function Home() {
       </section>
 
       {/* Rewards & Opportunities Section */}
-      <section className="py-40 bg-[#0a0a0a] text-white relative overflow-hidden">
+      <section className="py-40 bg-transparent text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(197,160,89,0.1),transparent_60%)]" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-32">
@@ -414,7 +414,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
             <motion.div 
                whileHover={{ y: -10 }}
-               className="p-10 md:p-16 border border-white/5 bg-white/5 backdrop-blur-3xl relative group overflow-hidden"
+               className="p-10 md:p-16 border border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-3xl relative group overflow-hidden"
             >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <div className="text-gold mb-8 md:mb-10 text-3xl md:text-4xl italic font-display">01</div>
@@ -424,7 +424,7 @@ export default function Home() {
 
             <motion.div 
                whileHover={{ y: -10 }}
-               className="p-10 md:p-16 border border-white/5 bg-white/5 backdrop-blur-3xl relative group overflow-hidden"
+               className="p-10 md:p-16 border border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-3xl relative group overflow-hidden"
             >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <div className="text-gold mb-8 md:mb-10 text-3xl md:text-4xl italic font-display">02</div>
@@ -434,7 +434,7 @@ export default function Home() {
 
             <motion.div 
                whileHover={{ y: -10 }}
-               className="p-10 md:p-16 border border-white/5 bg-white/5 backdrop-blur-3xl relative group overflow-hidden"
+               className="p-10 md:p-16 border border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-3xl relative group overflow-hidden"
             >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <div className="text-gold mb-8 md:mb-10 text-3xl md:text-4xl italic font-display">03</div>
@@ -469,7 +469,7 @@ export default function Home() {
       </section>
 
       {/* Feature Section */}
-      <section className="py-24 bg-premium-white border-y border-stone-100">
+      <section className="py-24 bg-royal-dark/40 backdrop-blur-md border-y border-gold/20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -486,7 +486,7 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-stone-50 -z-10 hidden md:block" />
+              <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-royal-dark/40 backdrop-blur-md -z-10 hidden md:block" />
               <div className="absolute -top-12 -left-12 font-display text-[10rem] text-stone-100/50 leading-none -z-10 select-none">
                 ROYAL
               </div>
@@ -500,17 +500,17 @@ export default function Home() {
             >
               <span className="text-gold font-bold uppercase tracking-[0.4em] text-[0.65rem] block mb-4">The Essence of Style</span>
               <h2 className="text-4xl md:text-5xl mb-8 leading-tight">Elevating Traditional Artistry to New Horizons</h2>
-              <p className="text-stone-500 mb-8 leading-relaxed font-light">
+              <p className="text-white/60 mb-8 leading-relaxed font-light">
                 Rajasthan Glamour Week is more than just a fashion show. It is a dedicated platform that bridges the gap between rural master artisans and urban global runways. We provide a space where the intricate Gota Patti, Zardosi, and Hand-block printing techniques find their voice in modern garment silhouettes.
               </p>
               <div className="grid grid-cols-2 gap-8 mb-10">
                 <div className="border-l-2 border-gold pl-6">
-                  <h4 className="text-stone-950 font-bold text-2xl mb-1">50+</h4>
-                  <p className="text-stone-400 text-[0.65rem] uppercase tracking-widest">Designers Showcased</p>
+                  <h4 className="text-gold font-bold text-2xl mb-1">50+</h4>
+                  <p className="text-white/40 text-[0.65rem] uppercase tracking-widest">Designers Showcased</p>
                 </div>
                 <div className="border-l-2 border-gold pl-6">
-                  <h4 className="text-stone-950 font-bold text-2xl mb-1">12K+</h4>
-                  <p className="text-stone-400 text-[0.65rem] uppercase tracking-widest">Annual Visitors</p>
+                  <h4 className="text-gold font-bold text-2xl mb-1">12K+</h4>
+                  <p className="text-white/40 text-[0.65rem] uppercase tracking-widest">Annual Visitors</p>
                 </div>
               </div>
               <Link to="/about" className="inline-flex items-center text-[0.65rem] font-bold tracking-[0.3em] uppercase hover:text-gold transition-colors">
@@ -522,7 +522,7 @@ export default function Home() {
       </section>
 
       {/* Quote/Trust Section - Refined with New Leadership */}
-      <section className="py-40 bg-[#0a0a0a] text-white relative overflow-hidden">
+      <section className="py-40 bg-transparent text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(197,160,89,0.08)_0%,transparent_70%)]" />
         <Quote className="absolute top-10 right-10 text-white/5" size={250} />
         <div className="container mx-auto px-6 text-center relative z-10">

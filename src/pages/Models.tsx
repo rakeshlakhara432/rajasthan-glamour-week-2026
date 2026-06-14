@@ -67,7 +67,7 @@ export default function Models() {
   };
 
   return (
-    <div className="min-h-screen pt-24 bg-[#0a0a0a]">
+    <div className="min-h-screen pt-24 bg-transparent">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
@@ -88,11 +88,11 @@ export default function Models() {
             <div className="flex flex-wrap gap-8">
               <button 
                 onClick={() => setShowRegForm(true)}
-                className="px-12 py-6 bg-gold text-[#0a0a0a] font-black uppercase tracking-[0.6em] text-[0.7rem] hover:bg-white transition-all shadow-2xl"
+                className="px-12 py-6 bg-gold text-premium-white font-black uppercase tracking-[0.6em] text-[0.7rem] hover:bg-royal-dark/40 backdrop-blur-md transition-all shadow-2xl"
               >
                 Join Casting
               </button>
-              <button className="px-12 py-6 border border-white/10 text-white font-black uppercase tracking-[0.6em] text-[0.7rem] hover:border-gold hover:text-gold transition-all">
+              <button className="px-12 py-6 border border-gold/20 text-white font-black uppercase tracking-[0.6em] text-[0.7rem] hover:border-gold hover:text-gold transition-all">
                 Agency Portal
               </button>
             </div>
@@ -101,34 +101,34 @@ export default function Models() {
       </section>
 
       {/* Featured Model of the Month */}
-      <section className="py-40 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-stone-50 -z-0" />
+      <section className="py-40 bg-royal-dark/40 backdrop-blur-md relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-royal-dark/40 backdrop-blur-md -z-0" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row gap-24 items-center">
             <div className="lg:w-1/2">
                <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] block mb-8">Hall of Excellence</span>
-               <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic text-[#0a0a0a] leading-none mb-12">Featured <br /><span className="text-gold not-italic">Of the Month</span></h2>
-               <p className="text-stone-500 italic text-xl leading-relaxed mb-12 max-w-xl">
+               <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic text-premium-white leading-none mb-12">Featured <br /><span className="text-gold not-italic">Of the Month</span></h2>
+               <p className="text-white/60 italic text-xl leading-relaxed mb-12 max-w-xl">
                  "A breathtaking representation of desert grace. Zara Khanna has redefined the imperial aesthetic for Season 2026."
                </p>
                <div className="grid grid-cols-2 gap-8 mb-12 border-l-4 border-gold pl-12">
                   <div>
-                    <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-stone-400 block mb-2">Global Ranking</span>
-                    <span className="text-2xl font-black text-[#0a0a0a]">#01 IN PORTFOLIO</span>
+                    <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/40 block mb-2">Global Ranking</span>
+                    <span className="text-2xl font-black text-premium-white">#01 IN PORTFOLIO</span>
                   </div>
                   <div>
-                    <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-stone-400 block mb-2">Trust Score</span>
+                    <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/40 block mb-2">Trust Score</span>
                     <span className="text-2xl font-black text-gold">99.8% READY</span>
                   </div>
                </div>
-               <button className="flex items-center space-x-6 text-[#0a0a0a] font-black uppercase tracking-[0.8em] text-[0.7rem] group">
+               <button className="flex items-center space-x-6 text-premium-white font-black uppercase tracking-[0.8em] text-[0.7rem] group">
                   <span>View Full Profile</span>
                   <ChevronRight size={16} className="group-hover:translate-x-4 transition-transform text-gold" />
                </button>
             </div>
             <div className="lg:w-1/2 aspect-[3/4] relative">
                <img src={images.model1} className="w-full h-full object-cover shadow-2xl grayscale hover:grayscale-0 transition-all duration-[2s]" alt="Featured Model" />
-               <div className="absolute -bottom-10 -left-10 bg-[#0a0a0a] p-12 text-white shadow-2xl border border-white/5">
+               <div className="absolute -bottom-10 -left-10 bg-transparent p-12 text-white shadow-2xl border border-gold/10">
                   <h3 className="text-3xl font-black tracking-tighter uppercase italic text-white">Zara Khanna</h3>
                   <p className="text-gold text-[0.6rem] font-black uppercase tracking-[0.4em] mt-3">Elite International</p>
                </div>
@@ -147,13 +147,13 @@ export default function Models() {
             </div>
             
             <div className="w-full lg:w-auto space-y-8">
-              <div className="flex flex-wrap gap-4 bg-white/5 p-2 backdrop-blur-2xl border border-white/5">
+              <div className="flex flex-wrap gap-4 bg-royal-dark/40 backdrop-blur-md/5 p-2 backdrop-blur-2xl border border-gold/10">
                 {(['all', 'male', 'female', 'kids'] as const).map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
                     className={`px-8 py-3 text-[0.55rem] font-black uppercase tracking-[0.4em] transition-all ${
-                      activeCategory === cat ? 'bg-gold text-[#0a0a0a]' : 'text-white/40 hover:text-white'
+                      activeCategory === cat ? 'bg-gold text-premium-white' : 'text-white/40 hover:text-white'
                     }`}
                   >
                     {cat}
@@ -167,7 +167,7 @@ export default function Models() {
                   placeholder="SEARCH BY NAME..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full lg:w-80 pl-16 pr-8 py-4 bg-white/5 border border-white/10 text-white text-[0.6rem] font-black uppercase tracking-[0.2em] outline-none focus:border-gold transition-all"
+                  className="w-full lg:w-80 pl-16 pr-8 py-4 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/20 text-white text-[0.6rem] font-black uppercase tracking-[0.2em] outline-none focus:border-gold transition-all"
                 />
               </div>
             </div>
@@ -181,14 +181,14 @@ export default function Models() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="group cursor-pointer bg-white/[0.02] border border-white/5 relative overflow-hidden"
+                className="group cursor-pointer bg-royal-dark/40 backdrop-blur-md/[0.02] border border-gold/10 relative overflow-hidden"
                 onClick={() => setSelectedModel(model)}
               >
-                <div className="aspect-[3/4] relative overflow-hidden border-b border-white/5">
+                <div className="aspect-[3/4] relative overflow-hidden border-b border-gold/10">
                   <img src={model.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[2s] group-hover:scale-110" alt={model.name} />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />
                   <div className="absolute top-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                     <span className="px-4 py-2 bg-gold text-[#0a0a0a] text-[0.5rem] font-black uppercase tracking-[0.3em] flex items-center">
+                     <span className="px-4 py-2 bg-gold text-premium-white text-[0.5rem] font-black uppercase tracking-[0.3em] flex items-center">
                        <Award size={10} className="mr-2" /> Top Rated
                      </span>
                   </div>
@@ -201,7 +201,7 @@ export default function Models() {
                       <span className="text-[0.7rem] font-black ml-2">{model.rating}</span>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 border-t border-white/5 pt-8 mb-4">
+                  <div className="grid grid-cols-2 gap-4 border-t border-gold/10 pt-8 mb-4">
                     <div>
                       <span className="text-[0.55rem] font-black uppercase tracking-[0.2em] text-white/30 block">Height</span>
                       <span className="text-[0.7rem] text-white uppercase font-black">{model.height}</span>
@@ -225,17 +225,17 @@ export default function Models() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-[#0a0a0a]/95 backdrop-blur-3xl"
+            className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-transparent/95 backdrop-blur-3xl"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="w-full max-w-5xl bg-[#0e0e0e] border border-white/5 overflow-hidden flex flex-col md:flex-row relative shadow-2xl"
+              className="w-full max-w-5xl bg-[#0e0e0e] border border-gold/10 overflow-hidden flex flex-col md:flex-row relative shadow-2xl"
             >
               <button 
                 onClick={() => setSelectedModel(null)}
-                className="absolute top-8 right-8 z-10 w-12 h-12 bg-white/5 flex items-center justify-center text-white hover:bg-gold transition-all"
+                className="absolute top-8 right-8 z-10 w-12 h-12 bg-royal-dark/40 backdrop-blur-md/5 flex items-center justify-center text-white hover:bg-gold transition-all"
               >
                 <X size={20} />
               </button>
@@ -269,12 +269,12 @@ export default function Models() {
                     </div>
                  </div>
 
-                 <div className="p-8 bg-white/5 border-l-2 border-gold">
+                 <div className="p-8 bg-royal-dark/40 backdrop-blur-md/5 border-l-2 border-gold">
                     <h4 className="text-gold font-black uppercase tracking-[0.4em] text-[0.6rem] mb-4 flex items-center"><TrendingUp size={14} className="mr-3" /> Career Highlights</h4>
                     <p className="text-white/40 text-[0.75rem] leading-relaxed uppercase tracking-[0.1em]">Worked with leading international brands including Sabyasachi, Vogue Italia, and Hermès. Winner of the 2025 Desert Glow Award.</p>
                  </div>
 
-                 <button className="w-full py-6 bg-gold text-[#0a0a0a] font-black uppercase tracking-[0.8em] text-[0.7rem] hover:bg-white transition-all shadow-2xl">
+                 <button className="w-full py-6 bg-gold text-premium-white font-black uppercase tracking-[0.8em] text-[0.7rem] hover:bg-royal-dark/40 backdrop-blur-md transition-all shadow-2xl">
                     Request Portfolio
                  </button>
               </div>
@@ -290,17 +290,17 @@ export default function Models() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center p-6 bg-[#0a0a0a]/98 backdrop-blur-3xl"
+            className="fixed inset-0 z-[60] flex items-center justify-center p-6 bg-transparent/98 backdrop-blur-3xl"
           >
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
-              className="w-full max-w-3xl bg-white p-12 md:p-20 shadow-[-40px_0_80px_rgba(212,175,55,0.1)] relative"
+              className="w-full max-w-3xl bg-royal-dark/40 backdrop-blur-md p-12 md:p-20 shadow-[-40px_0_80px_rgba(212,175,55,0.1)] relative"
             >
               <button 
                 onClick={() => setShowRegForm(false)}
-                className="absolute top-8 right-8 text-[#0a0a0a]/40 hover:text-[#0a0a0a] transition-colors"
+                className="absolute top-8 right-8 text-premium-white/40 hover:text-premium-white transition-colors"
                 disabled={regSuccess}
               >
                 <X size={24} />
@@ -311,26 +311,26 @@ export default function Models() {
                   <div className="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-10">
                     <CheckCircle size={48} className="text-gold" />
                   </div>
-                  <h3 className="text-3xl font-black uppercase tracking-tighter text-[#0a0a0a] mb-6">Talent Transmitted</h3>
-                  <p className="text-stone-500 italic text-xl mb-12">Your profile is now under review by our imperial board. Expect a response within 96 hours.</p>
-                  <button onClick={() => setShowRegForm(false)} className="px-16 py-6 bg-[#0a0a0a] text-white font-black uppercase tracking-[0.6em] text-[0.7rem]">Back to Hub</button>
+                  <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-white mb-6">Talent Transmitted</h3>
+                  <p className="text-white/60 italic text-xl mb-12">Your profile is now under review by our imperial board. Expect a response within 96 hours.</p>
+                  <button onClick={() => setShowRegForm(false)} className="px-16 py-6 bg-transparent text-white font-black uppercase tracking-[0.6em] text-[0.7rem]">Back to Hub</button>
                 </div>
               ) : (
                 <div className="space-y-12">
                    <div>
                       <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] block mb-6">Season 2026 Talent Search</span>
-                      <h3 className="text-4xl font-black uppercase tracking-tighter text-[#0a0a0a]">Casting <span className="text-gold italic font-display lowercase pl-2">application</span></h3>
+                      <h3 className="text-4xl font-black uppercase tracking-tighter text-premium-white">Casting <span className="text-gold italic font-display lowercase pl-2">application</span></h3>
                    </div>
 
                    <form onSubmit={handleRegistration} className="space-y-10">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-3">
-                           <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#0a0a0a]/40 block ml-1">Full Name</label>
-                           <input required type="text" className="w-full px-8 py-5 bg-stone-50 border border-stone-100 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black" placeholder="EX: ANANYA RAO" />
+                           <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-premium-white/40 block ml-1">Full Name</label>
+                           <input required type="text" className="w-full px-8 py-5 bg-royal-dark/40 backdrop-blur-md border border-gold/20 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black" placeholder="EX: ANANYA RAO" />
                         </div>
                         <div className="space-y-3">
-                           <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#0a0a0a]/40 block ml-1">Category</label>
-                           <select className="w-full px-8 py-5 bg-stone-50 border border-stone-100 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black appearance-none">
+                           <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-premium-white/40 block ml-1">Category</label>
+                           <select className="w-full px-8 py-5 bg-royal-dark/40 backdrop-blur-md border border-gold/20 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black appearance-none">
                               <option>Female Portfolio</option>
                               <option>Male Portfolio</option>
                               <option>Kids Portfolio</option>
@@ -340,31 +340,31 @@ export default function Models() {
 
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                          <div className="space-y-3">
-                            <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#0a0a0a]/40 block ml-1">Height (CM)</label>
-                            <input required type="text" className="w-full px-8 py-5 bg-stone-50 border border-stone-100 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black" placeholder="178" />
+                            <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-premium-white/40 block ml-1">Height (CM)</label>
+                            <input required type="text" className="w-full px-8 py-5 bg-royal-dark/40 backdrop-blur-md border border-gold/20 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black" placeholder="178" />
                          </div>
                          <div className="space-y-3">
-                            <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#0a0a0a]/40 block ml-1">Bust/Chest</label>
-                            <input required type="text" className="w-full px-8 py-5 bg-stone-50 border border-stone-100 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black" placeholder="34" />
+                            <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-premium-white/40 block ml-1">Bust/Chest</label>
+                            <input required type="text" className="w-full px-8 py-5 bg-royal-dark/40 backdrop-blur-md border border-gold/20 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black" placeholder="34" />
                          </div>
                          <div className="space-y-3">
-                            <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#0a0a0a]/40 block ml-1">Waist</label>
-                            <input required type="text" className="w-full px-8 py-5 bg-stone-50 border border-stone-100 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black" placeholder="24" />
+                            <label className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-premium-white/40 block ml-1">Waist</label>
+                            <input required type="text" className="w-full px-8 py-5 bg-royal-dark/40 backdrop-blur-md border border-gold/20 focus:border-gold outline-none text-[0.7rem] uppercase tracking-[0.2em] font-black" placeholder="24" />
                          </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="p-8 border-2 border-dashed border-stone-200 hover:border-gold transition-colors text-center cursor-pointer group">
                            <Upload size={24} className="mx-auto mb-4 text-stone-300 group-hover:text-gold" />
-                           <p className="text-[0.55rem] font-black uppercase tracking-[0.4em] text-stone-400">Portfolio PDF (MAX 50MB)</p>
+                           <p className="text-[0.55rem] font-black uppercase tracking-[0.4em] text-white/40">Portfolio PDF (MAX 50MB)</p>
                         </div>
                         <div className="p-8 border-2 border-dashed border-stone-200 hover:border-gold transition-colors text-center cursor-pointer group">
                            <Video size={24} className="mx-auto mb-4 text-stone-300 group-hover:text-gold" />
-                           <p className="text-[0.55rem] font-black uppercase tracking-[0.4em] text-stone-400">Walk Video Link / Upload</p>
+                           <p className="text-[0.55rem] font-black uppercase tracking-[0.4em] text-white/40">Walk Video Link / Upload</p>
                         </div>
                       </div>
 
-                      <button type="submit" className="w-full py-8 bg-[#0a0a0a] text-white font-black uppercase tracking-[1em] text-[0.8rem] hover:bg-gold transition-all shadow-2xl">
+                      <button type="submit" className="w-full py-8 bg-transparent text-white font-black uppercase tracking-[1em] text-[0.8rem] hover:bg-gold transition-all shadow-2xl">
                         Finalize Submission
                       </button>
                    </form>

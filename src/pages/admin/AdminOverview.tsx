@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 
 const StatCard = ({ title, value, change, icon: Icon, color = "gold" }: any) => (
-  <div className="bg-[#0a0a0a] border border-white/5 p-8 group hover:border-gold/30 transition-all">
+  <div className="bg-transparent border border-gold/10 p-8 group hover:border-gold/30 transition-all">
     <div className="flex justify-between items-start mb-8">
       <div className={`w-12 h-12 bg-${color}/10 flex items-center justify-center text-${color}`}>
         <Icon size={20} />
@@ -48,8 +48,8 @@ export default function AdminOverview() {
             <h2 className="text-5xl font-black uppercase tracking-tighter text-white italic">Imperial <br /><span className="text-gold not-italic">Intel</span></h2>
          </div>
          <div className="flex gap-4">
-            <button className="px-10 py-4 bg-white/5 border border-white/5 text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/40 hover:text-white transition-all">Export Report (PDF)</button>
-            <button className="px-10 py-4 bg-gold text-[#0a0a0a] text-[0.6rem] font-black uppercase tracking-[0.4em]">Real-time Refresh</button>
+            <button className="px-10 py-4 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/40 hover:text-white transition-all">Export Report (PDF)</button>
+            <button className="px-10 py-4 bg-gold text-premium-white text-[0.6rem] font-black uppercase tracking-[0.4em]">Real-time Refresh</button>
          </div>
       </div>
 
@@ -64,7 +64,7 @@ export default function AdminOverview() {
       {/* Main Analytics Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
          {/* Traffic Visualization Placeholder */}
-         <div className="lg:col-span-8 bg-[#0a0a0a] border border-white/5 p-12">
+         <div className="lg:col-span-8 bg-transparent border border-gold/10 p-12">
             <div className="flex justify-between items-center mb-16 px-4">
                <div className="flex items-center space-x-6">
                   <Activity className="text-gold" size={20} />
@@ -76,7 +76,7 @@ export default function AdminOverview() {
                      <span className="text-[0.55rem] font-black uppercase tracking-[0.2em] text-white/40">Registrations</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                     <div className="w-2 h-2 rounded-full bg-white/10" />
+                     <div className="w-2 h-2 rounded-full bg-royal-dark/40 backdrop-blur-md/10" />
                      <span className="text-[0.55rem] font-black uppercase tracking-[0.2em] text-white/40">Sales</span>
                   </div>
                </div>
@@ -89,7 +89,7 @@ export default function AdminOverview() {
                       initial={{ height: 0 }}
                       animate={{ height: `${h}%` }}
                       transition={{ delay: i * 0.05, duration: 1 }}
-                      className={`w-full ${h > 80 ? 'bg-gold' : 'bg-white/5'} group-hover:bg-gold/80 transition-all`} 
+                      className={`w-full ${h > 80 ? 'bg-gold' : 'bg-royal-dark/40 backdrop-blur-md/5'} group-hover:bg-gold/80 transition-all`} 
                     />
                     <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[0.5rem] font-black text-white/10 group-hover:text-gold transition-colors">OCT {10+i}</div>
                  </div>
@@ -99,14 +99,14 @@ export default function AdminOverview() {
 
          {/* Right Sidebar: Recent Alerts/Actions */}
          <div className="lg:col-span-4 space-y-12">
-            <div className="bg-[#0a0a0a] border border-white/5 p-12 h-auto">
+            <div className="bg-transparent border border-gold/10 p-12 h-auto">
                <h4 className="text-xl font-black uppercase tracking-tighter mb-12 flex items-center">
                   <Clock size={18} className="mr-4 text-gold" /> Critical Feed
                </h4>
                <div className="space-y-10">
                   {recentActivities.map((act, i) => (
                     <div key={i} className="flex gap-8 group">
-                       <div className="w-10 h-10 border border-white/5 shrink-0 flex items-center justify-center">
+                       <div className="w-10 h-10 border border-gold/10 shrink-0 flex items-center justify-center">
                           {act.status === 'success' && <CheckCircle2 size={12} className="text-green-500" />}
                           {act.status === 'pending' && <Eye size={12} className="text-gold" />}
                           {act.status === 'alert' && <AlertCircle size={12} className="text-red-500" />}
@@ -119,12 +119,12 @@ export default function AdminOverview() {
                     </div>
                   ))}
                </div>
-               <button className="w-full mt-16 py-5 border border-white/5 text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/30 hover:border-gold hover:text-gold transition-all">
+               <button className="w-full mt-16 py-5 border border-gold/10 text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/30 hover:border-gold hover:text-gold transition-all">
                   Launch Live Console
                </button>
             </div>
 
-            <div className="bg-gold p-12 text-[#0a0a0a]">
+            <div className="bg-gold p-12 text-premium-white">
                <div className="flex items-center space-x-6 mb-8">
                   <TrendingUp size={24} />
                   <h4 className="text-xl font-black uppercase tracking-tighter">Imperial Goal</h4>

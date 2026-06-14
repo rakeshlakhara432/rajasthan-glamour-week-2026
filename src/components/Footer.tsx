@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white/30 pt-32 pb-12 border-t border-gold/10 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.03),transparent_70%)] pointer-events-none" />
+    <footer className="bg-royal-dark text-white/30 pt-32 pb-12 border-t border-gold/30 relative overflow-hidden shadow-[0_-10px_40px_rgba(56,8,20,0.5)]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.05),transparent_70%)] pointer-events-none" />
       
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 border-b border-white/5 pb-20 relative z-10">
+      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 border-b border-gold/10 pb-20 relative z-10">
         <div className="col-span-1 lg:col-span-1">
           <div className="flex flex-col mb-10">
             <span className="font-display text-4xl font-bold tracking-tighter leading-none text-white uppercase italic">
@@ -16,7 +16,7 @@ export default function Footer() {
               Glamour Week
             </span>
           </div>
-          <p className="text-sm leading-relaxed mb-12 font-light max-w-xs italic text-stone-500">
+          <p className="text-sm leading-relaxed mb-12 font-light max-w-xs italic text-white/60">
             "The pinnacle of fashion excellence. Celebrating the sacred intersection of royal heritage and contemporary haute couture."
           </p>
           <div className="space-y-8">
@@ -25,7 +25,7 @@ export default function Footer() {
               <Facebook className="text-gold/30 hover:text-gold transition-all cursor-pointer hover:scale-110" size={20} />
               <Twitter className="text-gold/30 hover:text-gold transition-all cursor-pointer hover:scale-110" size={20} />
             </div>
-            <div className="pt-8 border-t border-white/5">
+            <div className="pt-8 border-t border-gold/10">
                 <span className="text-[0.55rem] font-black uppercase tracking-[0.4em] text-white/20 block mb-4">Official Channels</span>
                 <p className="text-[0.7rem] font-black uppercase tracking-[0.2em] text-gold">rajasthan_glamour_week</p>
             </div>

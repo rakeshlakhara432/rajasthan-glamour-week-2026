@@ -47,7 +47,7 @@ export default function ModelManager() {
       case 'approved': return 'text-green-500 bg-green-500/10';
       case 'rejected': return 'text-red-500 bg-red-500/10';
       case 'info_requested': return 'text-gold bg-gold/10';
-      default: return 'text-white/40 bg-white/5';
+      default: return 'text-white/40 bg-royal-dark/40 backdrop-blur-md/5';
     }
   };
 
@@ -66,21 +66,21 @@ export default function ModelManager() {
                <input 
                   type="text" 
                   placeholder="SEARCH APPLICATIONS..." 
-                  className="w-full lg:w-64 pl-14 pr-6 py-4 bg-white/5 border border-white/5 text-[0.6rem] font-black uppercase tracking-[0.2em] outline-none focus:border-gold/30 transition-all"
+                  className="w-full lg:w-64 pl-14 pr-6 py-4 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 text-[0.6rem] font-black uppercase tracking-[0.2em] outline-none focus:border-gold/30 transition-all"
                />
             </div>
-            <button className="px-8 py-4 bg-white/5 border border-white/5 text-[0.6rem] font-black uppercase tracking-[0.4em] flex items-center hover:text-gold transition-colors">
+            <button className="px-8 py-4 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 text-[0.6rem] font-black uppercase tracking-[0.4em] flex items-center hover:text-gold transition-colors">
                <Filter size={14} className="mr-4" /> Filter By Tier
             </button>
-            <button className="px-8 py-4 bg-gold text-[#0a0a0a] text-[0.6rem] font-black uppercase tracking-[0.4em] flex items-center">
+            <button className="px-8 py-4 bg-gold text-premium-white text-[0.6rem] font-black uppercase tracking-[0.4em] flex items-center">
                <Plus size={14} className="mr-4" /> Add Model
             </button>
          </div>
       </div>
 
       {/* Main Table View */}
-      <div className="bg-[#0a0a0a] border border-white/5 overflow-hidden">
-         <div className="grid grid-cols-12 gap-8 px-12 py-8 border-b border-white/10 bg-white/[0.02]">
+      <div className="bg-transparent border border-gold/10 overflow-hidden">
+         <div className="grid grid-cols-12 gap-8 px-12 py-8 border-b border-gold/20 bg-royal-dark/40 backdrop-blur-md/[0.02]">
             <div className="col-span-4 text-[0.55rem] font-black uppercase tracking-[0.4em] text-white/20">Casting Profile</div>
             <div className="col-span-2 text-[0.55rem] font-black uppercase tracking-[0.4em] text-white/20">Category</div>
             <div className="col-span-2 text-[0.55rem] font-black uppercase tracking-[0.4em] text-white/20">Stats (Height)</div>
@@ -98,7 +98,7 @@ export default function ModelManager() {
                 onClick={() => setSelectedApp(app)}
               >
                 <div className="col-span-4 flex items-center space-x-6">
-                   <div className="w-16 h-20 bg-white/5 border border-white/5 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                   <div className="w-16 h-20 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                       <img src={app.image} className="w-full h-full object-cover" />
                    </div>
                    <div>
@@ -140,27 +140,27 @@ export default function ModelManager() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="w-full max-w-4xl h-screen bg-[#0e0e0e] border-l border-white/10 overflow-y-auto p-12 md:p-20 flex flex-col"
+              className="w-full max-w-4xl h-screen bg-[#0e0e0e] border-l border-gold/20 overflow-y-auto p-12 md:p-20 flex flex-col"
             >
                <div className="flex justify-between items-center mb-20">
                   <span className={`px-6 py-2 text-[0.6rem] font-black uppercase tracking-[0.4em] ${getStatusColor(selectedApp.status)}`}>
                      {selectedApp.status.replace('_', ' ')}
                   </span>
-                  <button onClick={() => setSelectedApp(null)} className="p-4 bg-white/5 text-white/40 hover:text-white transition-colors">
+                  <button onClick={() => setSelectedApp(null)} className="p-4 bg-royal-dark/40 backdrop-blur-md/5 text-white/40 hover:text-white transition-colors">
                      <Plus size={24} className="rotate-45" />
                   </button>
                </div>
 
                <div className="flex flex-col lg:flex-row gap-20">
                   <div className="lg:w-2/5 space-y-12">
-                     <div className="aspect-[3/4] bg-white/5">
+                     <div className="aspect-[3/4] bg-royal-dark/40 backdrop-blur-md/5">
                         <img src={selectedApp.image} className="w-full h-full object-cover grayscale" />
                      </div>
                      <div className="grid grid-cols-2 gap-4">
-                        <button className="flex-1 py-6 bg-white/5 border border-white/5 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-gold hover:text-[#0a0a0a] transition-all">Reject</button>
-                        <button className="flex-1 py-6 bg-gold text-[#0a0a0a] text-[0.6rem] font-black uppercase tracking-[0.4em]">Approve</button>
+                        <button className="flex-1 py-6 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-gold hover:text-premium-white transition-all">Reject</button>
+                        <button className="flex-1 py-6 bg-gold text-premium-white text-[0.6rem] font-black uppercase tracking-[0.4em]">Approve</button>
                      </div>
-                     <button className="w-full py-6 bg-white/5 border border-white/5 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:text-gold transition-colors italic">Request More Information</button>
+                     <button className="w-full py-6 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:text-gold transition-colors italic">Request More Information</button>
                   </div>
 
                   <div className="lg:w-3/5 space-y-16">
@@ -176,7 +176,7 @@ export default function ModelManager() {
                           { label: 'Hips', val: '98 CM' },
                           { label: 'Experience', val: '2 YEARS' },
                         ].map((m, i) => (
-                          <div key={i} className="pb-6 border-b border-white/5">
+                          <div key={i} className="pb-6 border-b border-gold/10">
                              <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/20 block mb-2">{m.label}</span>
                              <p className="text-xl font-black text-white italic">{m.val}</p>
                           </div>
@@ -194,31 +194,31 @@ export default function ModelManager() {
                               ))}
                            </div>
                            <span className="text-2xl font-black text-white">{selectedApp.rating}</span>
-                           <div className="h-10 w-[1px] bg-white/5" />
+                           <div className="h-10 w-[1px] bg-royal-dark/40 backdrop-blur-md/5" />
                            <span className="text-[0.6rem] font-black uppercase tracking-[0.3em] text-green-500 bg-green-500/10 px-4 py-2 border border-green-500/20">Verified Identity</span>
                         </div>
                      </div>
 
                      <div className="grid grid-cols-2 gap-8">
-                        <div className="p-8 bg-white/5 border border-white/5 group hover:border-gold/30 transition-all cursor-pointer">
+                        <div className="p-8 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 group hover:border-gold/30 transition-all cursor-pointer">
                            <Camera size={20} className="text-white/20 mb-4 group-hover:text-gold" />
                            <p className="text-[0.6rem] font-black uppercase tracking-[0.3em]">Full Portfolio</p>
                            <p className="text-[0.55rem] text-white/20 mt-2">12 High-Res Shots</p>
                         </div>
-                        <div className="p-8 bg-white/5 border border-white/5 group hover:border-gold/30 transition-all cursor-pointer">
+                        <div className="p-8 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 group hover:border-gold/30 transition-all cursor-pointer">
                            <Video size={20} className="text-white/20 mb-4 group-hover:text-gold" />
                            <p className="text-[0.6rem] font-black uppercase tracking-[0.3em]">Runway Walk</p>
                            <p className="text-[0.55rem] text-white/20 mt-2">45s Media Clip</p>
                         </div>
                      </div>
 
-                     <div className="pt-12 border-t border-white/5 space-y-6">
+                     <div className="pt-12 border-t border-gold/10 space-y-6">
                         <div className="flex items-center space-x-6 text-white/40 hover:text-white transition-colors cursor-pointer group">
-                           <div className="w-10 h-10 border border-white/5 flex items-center justify-center group-hover:border-gold"><Mail size={16} /></div>
+                           <div className="w-10 h-10 border border-gold/10 flex items-center justify-center group-hover:border-gold"><Mail size={16} /></div>
                            <span className="text-[0.6rem] font-black uppercase tracking-[0.4em]">Send Official Invitation</span>
                         </div>
                         <div className="flex items-center space-x-6 text-white/40 hover:text-white transition-colors cursor-pointer group">
-                           <div className="w-10 h-10 border border-white/5 flex items-center justify-center group-hover:border-gold"><Smartphone size={16} /></div>
+                           <div className="w-10 h-10 border border-gold/10 flex items-center justify-center group-hover:border-gold"><Smartphone size={16} /></div>
                            <span className="text-[0.6rem] font-black uppercase tracking-[0.4em]">Archive Phone Record</span>
                         </div>
                      </div>

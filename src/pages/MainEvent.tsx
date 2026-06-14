@@ -46,7 +46,7 @@ const LiveTicker = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
-        className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#0a0a0a] text-center flex items-center justify-center"
+        className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-premium-white text-center flex items-center justify-center"
       >
         <Activity size={12} className="mr-3 animate-pulse" />
         {updates[index]}
@@ -79,7 +79,7 @@ export default function MainEvent() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-transparent">
       {/* Live Ticker */}
       <div className="pt-20">
         <LiveTicker />
@@ -127,21 +127,21 @@ export default function MainEvent() {
       </section>
 
       {/* Event Overview & Calendar */}
-      <section className="py-40 bg-white relative overflow-hidden">
+      <section className="py-40 bg-royal-dark/40 backdrop-blur-md relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
             <div className="lg:col-span-4">
               <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] mb-8 block">Event Overview</span>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-[#0a0a0a] mb-12">The <br /><span className="text-gold not-italic">Showdown</span></h2>
-              <p className="text-stone-500 text-lg leading-relaxed mb-12">
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-premium-white mb-12">The <br /><span className="text-gold not-italic">Showdown</span></h2>
+              <p className="text-white/60 text-lg leading-relaxed mb-12">
                 Rajasthan Glamour Week (RGW) 2026 is an 8-day extravaganza featuring over 60 designers, international models, and the biggest names in Hollywood and Bollywood.
               </p>
               <div className="space-y-6">
-                 <div className="flex items-center space-x-6 text-[#0a0a0a]">
+                 <div className="flex items-center space-x-6 text-premium-white">
                     <MapPin className="text-gold" size={20} />
                     <span className="text-[0.65rem] font-black uppercase tracking-[0.3em]">City Palace & Nahargarh Fort</span>
                  </div>
-                 <div className="flex items-center space-x-6 text-[#0a0a0a]">
+                 <div className="flex items-center space-x-6 text-premium-white">
                     <Calendar className="text-gold" size={20} />
                     <span className="text-[0.65rem] font-black uppercase tracking-[0.3em]">Oct 15 - Oct 22, 2026</span>
                  </div>
@@ -149,8 +149,8 @@ export default function MainEvent() {
             </div>
 
             <div className="lg:col-span-8">
-               <div className="bg-[#0a0a0a] p-12 md:p-20 shadow-2xl skew-y-1">
-                  <div className="flex justify-between items-end mb-16 border-b border-white/5 pb-8">
+               <div className="bg-transparent p-12 md:p-20 shadow-2xl skew-y-1">
+                  <div className="flex justify-between items-end mb-16 border-b border-gold/10 pb-8">
                      <h3 className="text-2xl font-black uppercase tracking-tighter text-white">Fashion Week Calendar</h3>
                      <span className="text-gold text-[0.55rem] font-black uppercase tracking-[0.4em]">Official Schedule</span>
                   </div>
@@ -172,7 +172,7 @@ export default function MainEvent() {
                      ))}
                   </div>
                   <div className="mt-16 text-center">
-                     <Link to="/events" className="inline-block py-4 px-10 border border-white/10 text-[0.6rem] font-black uppercase tracking-[0.4em] text-white hover:bg-gold hover:text-[#0a0a0a] transition-all">Full 8-Day Itinerary</Link>
+                     <Link to="/events" className="inline-block py-4 px-10 border border-gold/20 text-[0.6rem] font-black uppercase tracking-[0.4em] text-white hover:bg-gold hover:text-premium-white transition-all">Full 8-Day Itinerary</Link>
                   </div>
                </div>
             </div>
@@ -181,14 +181,14 @@ export default function MainEvent() {
       </section>
 
       {/* Celebrity & Venue Showcase */}
-      <section className="py-40 bg-stone-50 border-y border-stone-100">
+      <section className="py-40 bg-royal-dark/40 backdrop-blur-md border-y border-gold/20">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24">
             <div>
               <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] block mb-8">The Elite Guild</span>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-[#0a0a0a]">Global <br /><span className="text-gold not-italic">Appearances</span></h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-premium-white">Global <br /><span className="text-gold not-italic">Appearances</span></h2>
             </div>
-            <p className="text-stone-400 max-w-sm italic font-light text-lg mt-8 md:mt-0">
+            <p className="text-white/40 max-w-sm italic font-light text-lg mt-8 md:mt-0">
                Witness the convergence of heritage and Hollywood.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function MainEvent() {
       </section>
 
       {/* Live Features: Voting & updates */}
-      <section className="py-40 bg-[#0a0a0a] text-white overflow-hidden relative">
+      <section className="py-40 bg-transparent text-white overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(197,160,89,0.05)_0%,transparent_70%)]" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
@@ -239,7 +239,7 @@ export default function MainEvent() {
                       </div>
                       <button 
                         disabled={voted}
-                        className="w-full h-4 bg-white/5 relative overflow-hidden"
+                        className="w-full h-4 bg-royal-dark/40 backdrop-blur-md/5 relative overflow-hidden"
                         onClick={() => {
                           setVoted(true);
                           // Simulating vote update
@@ -249,7 +249,7 @@ export default function MainEvent() {
                          <motion.div 
                            initial={{ width: 0 }}
                            whileInView={{ width: `${d.percent}%` }}
-                           className={`absolute inset-y-0 left-0 ${voted ? 'bg-gold' : 'bg-white/20 group-hover:bg-gold/50'}`}
+                           className={`absolute inset-y-0 left-0 ${voted ? 'bg-gold' : 'bg-royal-dark/40 backdrop-blur-md/20 group-hover:bg-gold/50'}`}
                          />
                       </button>
                    </div>
@@ -268,7 +268,7 @@ export default function MainEvent() {
                   <span className="text-gold font-black uppercase tracking-[0.4em] text-[0.6rem]">Digital Chronicle</span>
                </div>
                
-               <div className="bg-white/5 p-12 border border-white/10 backdrop-blur-3xl">
+               <div className="bg-royal-dark/40 backdrop-blur-md/5 p-12 border border-gold/20 backdrop-blur-3xl">
                   <h3 className="text-2xl font-black uppercase tracking-tighter mb-12">Live Feed Updates</h3>
                   <div className="space-y-12">
                     {[
@@ -282,7 +282,7 @@ export default function MainEvent() {
                       </div>
                     ))}
                   </div>
-                  <button className="w-full mt-16 py-5 border border-white/10 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-[#0a0a0a] transition-all">Launch Live Hub</button>
+                  <button className="w-full mt-16 py-5 border border-gold/20 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-royal-dark/40 backdrop-blur-md hover:text-premium-white transition-all">Launch Live Hub</button>
                </div>
             </div>
           </div>
@@ -290,12 +290,12 @@ export default function MainEvent() {
       </section>
 
       {/* Press Releases */}
-      <section className="py-40 bg-white">
+      <section className="py-40 bg-royal-dark/40 backdrop-blur-md">
         <div className="container mx-auto px-6">
-          <div className="mb-24 flex justify-between items-end border-b border-stone-100 pb-12">
+          <div className="mb-24 flex justify-between items-end border-b border-gold/20 pb-12">
              <div>
                 <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] block mb-8">Media Archive</span>
-                <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-[#0a0a0a]">Press <br /><span className="text-gold not-italic">Releases</span></h2>
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-premium-white">Press <br /><span className="text-gold not-italic">Releases</span></h2>
              </div>
              <Newspaper className="text-gold opacity-20" size={64} />
           </div>
@@ -305,16 +305,16 @@ export default function MainEvent() {
                <motion.div 
                  key={i}
                  whileHover={{ y: -10 }}
-                 className="p-12 border border-stone-100 bg-stone-50/50 hover:bg-white hover:shadow-2xl transition-all duration-500 flex flex-col justify-between min-h-[350px]"
+                 className="p-12 border border-gold/20 bg-royal-dark/40 backdrop-blur-md/50 hover:bg-royal-dark/40 backdrop-blur-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between min-h-[350px]"
                >
                  <div>
                     <span className="text-gold font-black uppercase tracking-[0.4em] text-[0.55rem] block mb-8">{press.date}, 2026</span>
-                    <h3 className="text-2xl font-black uppercase tracking-tighter text-[#0a0a0a] mb-8 leading-tight">{press.title}</h3>
+                    <h3 className="text-2xl font-black uppercase tracking-tighter text-premium-white mb-8 leading-tight">{press.title}</h3>
                  </div>
                  <div className="flex justify-between items-center">
-                    <span className="text-stone-400 text-[0.55rem] font-black uppercase tracking-[0.2em]">{press.source}</span>
-                    <div className="w-10 h-10 rounded-full border border-stone-100 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all">
-                       <ChevronRight size={14} className="text-stone-300 group-hover:text-[#0a0a0a]" />
+                    <span className="text-white/40 text-[0.55rem] font-black uppercase tracking-[0.2em]">{press.source}</span>
+                    <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all">
+                       <ChevronRight size={14} className="text-stone-300 group-hover:text-premium-white" />
                     </div>
                  </div>
                </motion.div>
@@ -326,12 +326,12 @@ export default function MainEvent() {
       {/* Final CTA: App Download / Digital Sync */}
       <section className="py-24 bg-gold relative overflow-hidden">
         <div className="container mx-auto px-6 text-center relative z-10">
-           <Smartphone className="mx-auto mb-8 text-[#0a0a0a]" size={32} />
-           <h4 className="text-3xl md:text-5xl font-display italic text-[#0a0a0a] mb-10 tracking-tight">Sync Your Imperial Schedule</h4>
-           <p className="text-[#0a0a0a]/60 text-[0.65rem] font-black uppercase tracking-[0.4em] mb-12">Download the official RGW App for exclusive behind-the-scenes content.</p>
+           <Smartphone className="mx-auto mb-8 text-premium-white" size={32} />
+           <h4 className="text-3xl md:text-5xl font-display italic text-premium-white mb-10 tracking-tight">Sync Your Imperial Schedule</h4>
+           <p className="text-premium-white/60 text-[0.65rem] font-black uppercase tracking-[0.4em] mb-12">Download the official RGW App for exclusive behind-the-scenes content.</p>
            <div className="flex flex-wrap justify-center gap-6">
-              <button className="px-12 py-5 bg-[#0a0a0a] text-white text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-[#0a0a0a] transition-all">Apple App Store</button>
-              <button className="px-12 py-5 bg-[#0a0a0a] text-white text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-[#0a0a0a] transition-all">Google Play Store</button>
+              <button className="px-12 py-5 bg-transparent text-white text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-royal-dark/40 backdrop-blur-md hover:text-premium-white transition-all">Apple App Store</button>
+              <button className="px-12 py-5 bg-transparent text-white text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-royal-dark/40 backdrop-blur-md hover:text-premium-white transition-all">Google Play Store</button>
            </div>
         </div>
       </section>

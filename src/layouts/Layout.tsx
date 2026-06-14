@@ -32,7 +32,7 @@ export default function Layout() {
       </AnimatePresence>
 
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-gold z-[60] origin-left"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold-dark via-gold to-gold-light z-[60] origin-left shadow-[0_0_10px_rgba(212,175,55,0.8)]"
         style={{ scaleX }}
       />
       <Header />

@@ -68,9 +68,9 @@ export default function AdminDashboard() {
       <motion.aside 
         initial={false}
         animate={{ width: isSidebarOpen ? 320 : 0, opacity: isSidebarOpen ? 1 : 0 }}
-        className="h-screen bg-[#0a0a0a] border-r border-white/5 fixed left-0 top-0 z-40 overflow-hidden"
+        className="h-screen bg-transparent border-r border-gold/10 fixed left-0 top-0 z-40 overflow-hidden"
       >
-        <div className="p-10 border-b border-white/5 flex items-center justify-between">
+        <div className="p-10 border-b border-gold/10 flex items-center justify-between">
             <Link to="/" className="flex flex-col">
                 <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] mb-1">RGW</span>
                 <span className="text-sm font-black uppercase tracking-tighter text-white">IMPERIAL CMD</span>
@@ -89,7 +89,7 @@ export default function AdminDashboard() {
                            key={item.id}
                            onClick={() => setActiveTab(item.id)}
                            className={`w-full flex items-center px-4 py-4 transition-all group ${
-                             activeTab === item.id ? 'bg-gold text-[#0a0a0a]' : 'text-white/40 hover:text-white hover:bg-white/5'
+                             activeTab === item.id ? 'bg-gold text-premium-white' : 'text-white/40 hover:text-white hover:bg-royal-dark/40 backdrop-blur-md/5'
                            }`}
                          >
                            <item.icon size={16} className={`mr-4 transition-transform ${activeTab === item.id ? '' : 'group-hover:scale-110'}`} />
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
             </div>
         </nav>
 
-        <div className="absolute bottom-0 left-0 w-full p-8 border-t border-white/5 bg-[#0a0a0a]">
+        <div className="absolute bottom-0 left-0 w-full p-8 border-t border-gold/10 bg-transparent">
            <button className="w-full flex items-center px-4 py-4 text-red-500/50 hover:text-red-500 transition-colors uppercase text-[0.65rem] font-black tracking-[0.2em]">
               <LogOut size={16} className="mr-4" /> Sign Out Portal
            </button>
@@ -113,7 +113,7 @@ export default function AdminDashboard() {
       {/* Main Content Area */}
       <main className={`flex-1 transition-all duration-500 ${isSidebarOpen ? 'ml-[320px]' : 'ml-0'}`}>
         {/* Header bar */}
-        <header className="h-24 bg-[#0a0a0a]/50 backdrop-blur-3xl border-b border-white/5 sticky top-0 z-30 flex items-center justify-between px-12">
+        <header className="h-24 bg-transparent/50 backdrop-blur-3xl border-b border-gold/10 sticky top-0 z-30 flex items-center justify-between px-12">
            <div className="flex items-center space-x-8">
               {!isSidebarOpen && (
                 <button onClick={() => setIsSidebarOpen(true)} className="text-white/40 hover:text-gold transition-colors">
@@ -132,14 +132,14 @@ export default function AdminDashboard() {
                  <input 
                     type="text" 
                     placeholder="GLOBAL REGISTRY SEARCH..." 
-                    className="bg-white/5 border border-white/5 pl-12 pr-6 py-3 text-[0.6rem] font-black uppercase tracking-[0.2em] w-80 outline-none focus:border-gold/50 transition-all"
+                    className="bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 pl-12 pr-6 py-3 text-[0.6rem] font-black uppercase tracking-[0.2em] w-80 outline-none focus:border-gold/50 transition-all"
                  />
               </div>
               <button className="relative text-white/40 hover:text-white transition-colors">
                  <Bell size={20} />
                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-gold rounded-full" />
               </button>
-              <div className="flex items-center space-x-6 border-l border-white/5 pl-10">
+              <div className="flex items-center space-x-6 border-l border-gold/10 pl-10">
                   <div className="text-right">
                      <p className="text-[0.65rem] font-black uppercase tracking-[0.1em] text-white">Imperial Admin</p>
                      <p className="text-[0.55rem] font-black uppercase tracking-[0.2em] text-gold">Super User</p>

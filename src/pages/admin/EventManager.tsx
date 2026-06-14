@@ -36,13 +36,13 @@ export default function EventManager() {
             <h2 className="text-5xl font-black uppercase tracking-tighter text-white italic">Event <br /><span className="text-gold not-italic">Steering</span></h2>
          </div>
          
-         <div className="flex bg-white/5 p-2 backdrop-blur-2xl border border-white/5">
+         <div className="flex bg-royal-dark/40 backdrop-blur-md/5 p-2 backdrop-blur-2xl border border-gold/10">
             {(['schedule', 'venue', 'live'] as const).map((mode) => (
               <button
                 key={mode}
                 onClick={() => setActiveView(mode)}
                 className={`px-10 py-3 text-[0.6rem] font-black uppercase tracking-[0.4em] transition-all ${
-                  activeView === mode ? 'bg-gold text-[#0a0a0a]' : 'text-white/40 hover:text-white'
+                  activeView === mode ? 'bg-gold text-premium-white' : 'text-white/40 hover:text-white'
                 }`}
               >
                 {mode} Control
@@ -54,22 +54,22 @@ export default function EventManager() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
          {/* Main Event Table / Controls */}
          <div className="lg:col-span-8 space-y-8">
-            <div className="bg-[#0a0a0a] border border-white/5 p-12">
+            <div className="bg-transparent border border-gold/10 p-12">
                <div className="flex justify-between items-center mb-16 px-4">
                   <div className="flex items-center space-x-6">
                      <Calendar size={18} className="text-gold" />
                      <h4 className="text-xl font-black uppercase tracking-tighter italic">Schedule Master</h4>
                   </div>
-                  <button className="px-8 py-3 bg-white/5 border border-white/5 text-[0.55rem] font-black uppercase tracking-[0.4em] hover:text-gold transition-colors flex items-center">
+                  <button className="px-8 py-3 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/10 text-[0.55rem] font-black uppercase tracking-[0.4em] hover:text-gold transition-colors flex items-center">
                     <Plus size={12} className="mr-3" /> Create Manifest
                   </button>
                </div>
 
                <div className="space-y-6">
                   {events.map((evt) => (
-                    <div key={evt.id} className="p-8 bg-white/[0.02] border border-white/5 hover:border-gold/20 transition-all group flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+                    <div key={evt.id} className="p-8 bg-royal-dark/40 backdrop-blur-md/[0.02] border border-gold/10 hover:border-gold/20 transition-all group flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
                        <div className="flex items-start space-x-8 max-w-sm">
-                          <div className="w-14 h-14 border border-white/10 flex flex-col items-center justify-center shrink-0">
+                          <div className="w-14 h-14 border border-gold/20 flex flex-col items-center justify-center shrink-0">
                              <span className="text-[0.45rem] font-black uppercase tracking-[0.1em] text-white/20">OCT</span>
                              <span className="text-xl font-black text-white italic">{evt.date.split(' ')[1].replace(',', '')}</span>
                           </div>
@@ -88,10 +88,10 @@ export default function EventManager() {
                                 {evt.status}
                              </span>
                           </div>
-                          <div className="flex space-x-4 border-l border-white/5 pl-12">
-                             <button className="p-3 bg-white/5 text-white/40 hover:text-gold transition-colors"><Edit2 size={14} /></button>
-                             <button className="p-3 bg-white/5 text-white/40 hover:text-blue-400 transition-colors"><Copy size={14} /></button>
-                             <button className="p-3 bg-white/5 text-white/40 hover:text-red-500 transition-colors"><Trash2 size={14} /></button>
+                          <div className="flex space-x-4 border-l border-gold/10 pl-12">
+                             <button className="p-3 bg-royal-dark/40 backdrop-blur-md/5 text-white/40 hover:text-gold transition-colors"><Edit2 size={14} /></button>
+                             <button className="p-3 bg-royal-dark/40 backdrop-blur-md/5 text-white/40 hover:text-blue-400 transition-colors"><Copy size={14} /></button>
+                             <button className="p-3 bg-royal-dark/40 backdrop-blur-md/5 text-white/40 hover:text-red-500 transition-colors"><Trash2 size={14} /></button>
                           </div>
                        </div>
                     </div>
@@ -100,7 +100,7 @@ export default function EventManager() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               <div className="bg-[#0a0a0a] border border-white/5 p-12 space-y-12">
+               <div className="bg-transparent border border-gold/10 p-12 space-y-12">
                   <h4 className="text-xl font-black uppercase tracking-tighter flex items-center">
                      <Users size={18} className="mr-4 text-gold" /> Capacity Monitor
                   </h4>
@@ -115,7 +115,7 @@ export default function EventManager() {
                              <span className="text-white/40">{cap.label}</span>
                              <span className="text-white italic">{cap.current} / {cap.max}</span>
                           </div>
-                          <div className="h-1 bg-white/5 relative overflow-hidden">
+                          <div className="h-1 bg-royal-dark/40 backdrop-blur-md/5 relative overflow-hidden">
                              <div className="absolute inset-y-0 left-0 bg-gold" style={{ width: `${(cap.current/cap.max)*100}%` }} />
                           </div>
                        </div>
@@ -123,7 +123,7 @@ export default function EventManager() {
                   </div>
                </div>
 
-               <div className="bg-white p-12 text-[#0a0a0a] space-y-12">
+               <div className="bg-royal-dark/40 backdrop-blur-md p-12 text-premium-white space-y-12">
                   <h4 className="text-xl font-black uppercase tracking-tighter flex items-center">
                      <AlertTriangle size={18} className="mr-4 text-gold" /> Critical Deadlines
                   </h4>
@@ -136,7 +136,7 @@ export default function EventManager() {
                        <div key={i} className="flex items-center space-x-6 border-l-2 border-gold pl-6 py-2">
                           <div>
                              <p className="text-[0.65rem] font-black uppercase tracking-[0.1em]">{d.label}</p>
-                             <p className="text-[0.55rem] font-black uppercase tracking-[0.3em] text-stone-400 mt-1">{d.time}</p>
+                             <p className="text-[0.55rem] font-black uppercase tracking-[0.3em] text-white/40 mt-1">{d.time}</p>
                           </div>
                        </div>
                      ))}
@@ -147,25 +147,25 @@ export default function EventManager() {
 
          {/* Sidebar: Control Features */}
          <div className="lg:col-span-4 space-y-12">
-            <div className="bg-[#0a0a0a] border border-white/5 p-12 space-y-12">
+            <div className="bg-transparent border border-gold/10 p-12 space-y-12">
                <h4 className="text-xl font-black uppercase tracking-tighter flex items-center">
                   <Mic size={18} className="mr-4 text-gold" /> Launch Announcement
                </h4>
                <p className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/30 leading-relaxed italic">Broadcast critical system-wide messages to all event stakeholders.</p>
                <div className="space-y-8">
                   <textarea 
-                    className="w-full bg-white/5 border border-white/10 p-6 text-[0.7rem] font-black uppercase tracking-[0.1em] text-white h-32 outline-none focus:border-gold/30 resize-none"
+                    className="w-full bg-royal-dark/40 backdrop-blur-md/5 border border-gold/20 p-6 text-[0.7rem] font-black uppercase tracking-[0.1em] text-white h-32 outline-none focus:border-gold/30 resize-none"
                     placeholder="ENTER BROADCAST CONTENT..."
                   />
                   <div className="grid grid-cols-2 gap-4">
-                     <button className="py-4 border border-white/5 text-[0.55rem] font-black uppercase tracking-[0.4em] hover:text-gold hover:border-gold/30 transition-all">Push to App</button>
-                     <button className="py-4 border border-white/5 text-[0.55rem] font-black uppercase tracking-[0.4em] hover:text-gold hover:border-gold/30 transition-all">SMS Relay</button>
+                     <button className="py-4 border border-gold/10 text-[0.55rem] font-black uppercase tracking-[0.4em] hover:text-gold hover:border-gold/30 transition-all">Push to App</button>
+                     <button className="py-4 border border-gold/10 text-[0.55rem] font-black uppercase tracking-[0.4em] hover:text-gold hover:border-gold/30 transition-all">SMS Relay</button>
                   </div>
-                  <button className="w-full py-5 bg-gold text-[#0a0a0a] text-[0.6rem] font-black uppercase tracking-[0.8em]">Deploy Signal</button>
+                  <button className="w-full py-5 bg-gold text-premium-white text-[0.6rem] font-black uppercase tracking-[0.8em]">Deploy Signal</button>
                </div>
             </div>
 
-            <div className="bg-[#0a0a0a] border border-white/5 p-12 space-y-12 h-auto">
+            <div className="bg-transparent border border-gold/10 p-12 space-y-12 h-auto">
                <h4 className="text-xl font-black uppercase tracking-tighter flex items-center">
                   <Monitor size={18} className="mr-4 text-gold" /> Feed Control
                </h4>
@@ -175,7 +175,7 @@ export default function EventManager() {
                     { label: 'Backstage V-LOG Feed', status: 'Live' },
                     { label: 'Global Runway Access', status: 'Paused' },
                   ].map((f, i) => (
-                    <div key={i} className="flex justify-between items-center p-6 bg-white/[0.02]">
+                    <div key={i} className="flex justify-between items-center p-6 bg-royal-dark/40 backdrop-blur-md/[0.02]">
                        <span className="text-[0.6rem] font-black uppercase tracking-[0.2em] text-white/40">{f.label}</span>
                        <div className="flex items-center space-x-4">
                           <span className={`w-2 h-2 rounded-full ${f.status === 'Live' ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />

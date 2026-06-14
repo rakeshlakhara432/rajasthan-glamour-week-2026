@@ -61,22 +61,22 @@ export default function Gallery() {
   };
 
   return (
-    <div className="min-h-screen pt-24 bg-[#0a0a0a]">
+    <div className="min-h-screen pt-24 bg-transparent">
       {/* Header */}
-      <section className="py-40 bg-[#0a0a0a] text-white relative overflow-hidden">
+      <section className="py-40 bg-transparent text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.06)_0%,transparent_70%)]" />
         <div className="container mx-auto px-6 text-center relative z-10 pt-20">
             <span className="text-gold font-black uppercase tracking-[1em] text-[0.6rem] mb-10 block underline underline-offset-[16px] decoration-gold/20">Media Archive</span>
             <h1 className="text-5xl md:text-[6rem] mb-16 uppercase font-black tracking-tighter leading-[0.8] mix-blend-difference">Live <br /><span className="italic font-normal text-gold">Vault</span></h1>
             
             <div className="flex flex-col items-center gap-12 mt-20">
-               <div className="flex bg-white/5 p-2 backdrop-blur-2xl border border-white/5 rounded-none">
+               <div className="flex bg-royal-dark/40 backdrop-blur-md/5 p-2 backdrop-blur-2xl border border-gold/10 rounded-none">
                   {(['photo', 'video'] as const).map((mode) => (
                     <button
                       key={mode}
                       onClick={() => setViewMode(mode)}
                       className={`px-12 py-3 text-[0.6rem] font-black uppercase tracking-[0.4em] transition-all flex items-center ${
-                        viewMode === mode ? 'bg-gold text-[#0a0a0a]' : 'text-white/40 hover:text-white'
+                        viewMode === mode ? 'bg-gold text-premium-white' : 'text-white/40 hover:text-white'
                       }`}
                     >
                       {mode === 'photo' ? <Camera size={14} className="mr-3" /> : <Video size={14} className="mr-3" />}
@@ -91,7 +91,7 @@ export default function Gallery() {
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
                     className={`px-8 py-3 text-[0.55rem] font-black uppercase tracking-[0.3em] transition-all border ${
-                      activeCategory === cat ? 'bg-white text-[#0a0a0a] border-white' : 'bg-transparent text-white/20 border-white/5 hover:border-gold hover:text-gold'
+                      activeCategory === cat ? 'bg-royal-dark/40 backdrop-blur-md text-premium-white border-white' : 'bg-transparent text-white/20 border-gold/10 hover:border-gold hover:text-gold'
                     }`}
                   >
                     {cat}
@@ -103,7 +103,7 @@ export default function Gallery() {
       </section>
 
       {/* Masonry Gallery */}
-      <section className="py-32 bg-white relative">
+      <section className="py-32 bg-royal-dark/40 backdrop-blur-md relative">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="container mx-auto px-6">
             <div className="columns-1 md:columns-2 lg:columns-3 gap-8 md:gap-12 space-y-8 md:space-y-12">
@@ -128,7 +128,7 @@ export default function Gallery() {
                       
                       {item.type === 'video' && (
                         <div className="absolute inset-0 flex items-center justify-center">
-                           <div className="w-16 h-16 rounded-full bg-gold/80 flex items-center justify-center text-[#0a0a0a] scale-90 group-hover:scale-100 transition-transform">
+                           <div className="w-16 h-16 rounded-full bg-gold/80 flex items-center justify-center text-premium-white scale-90 group-hover:scale-100 transition-transform">
                               <Play fill="currentColor" size={24} />
                            </div>
                         </div>
@@ -140,9 +140,9 @@ export default function Gallery() {
                           <span className="text-gold text-[0.55rem] uppercase tracking-[0.4em] mb-3 font-black block">{item.category}</span>
                           <h3 className="text-2xl font-black uppercase tracking-tighter mb-6">{item.title}</h3>
                           <div className="flex space-x-6">
-                             <button onClick={handleDownload} className="p-3 bg-white/10 hover:bg-gold hover:text-[#0a0a0a] transition-all rounded-full"><Download size={14} /></button>
-                             <button onClick={handleShare} className="p-3 bg-white/10 hover:bg-gold hover:text-[#0a0a0a] transition-all rounded-full"><Share2 size={14} /></button>
-                             <button className="p-3 bg-white/10 hover:bg-gold hover:text-[#0a0a0a] transition-all rounded-full"><Maximize2 size={14} /></button>
+                             <button onClick={handleDownload} className="p-3 bg-royal-dark/40 backdrop-blur-md/10 hover:bg-gold hover:text-premium-white transition-all rounded-full"><Download size={14} /></button>
+                             <button onClick={handleShare} className="p-3 bg-royal-dark/40 backdrop-blur-md/10 hover:bg-gold hover:text-premium-white transition-all rounded-full"><Share2 size={14} /></button>
+                             <button className="p-3 bg-royal-dark/40 backdrop-blur-md/10 hover:bg-gold hover:text-premium-white transition-all rounded-full"><Maximize2 size={14} /></button>
                           </div>
                       </div>
                     </div>
@@ -166,11 +166,11 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 bg-[#0a0a0a]/98 backdrop-blur-3xl"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 bg-transparent/98 backdrop-blur-3xl"
           >
             <button 
               onClick={() => setSelectedMedia(null)}
-              className="absolute top-8 right-8 z-10 w-12 h-12 bg-white/5 flex items-center justify-center text-white hover:bg-gold hover:text-[#0a0a0a] transition-all"
+              className="absolute top-8 right-8 z-10 w-12 h-12 bg-royal-dark/40 backdrop-blur-md/5 flex items-center justify-center text-white hover:bg-gold hover:text-premium-white transition-all"
             >
               <X size={24} />
             </button>
@@ -179,7 +179,7 @@ export default function Gallery() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="w-full max-w-6xl h-full flex flex-col md:flex-row bg-[#0e0e0e] border border-white/5 shadow-2xl relative overflow-hidden"
+              className="w-full max-w-6xl h-full flex flex-col md:flex-row bg-[#0e0e0e] border border-gold/10 shadow-2xl relative overflow-hidden"
             >
                <div className="md:w-2/3 h-[60vh] md:h-full relative overflow-hidden bg-black flex items-center justify-center">
                   <img src={selectedMedia.url} className="w-full h-full object-contain" alt={selectedMedia.title} />
@@ -199,11 +199,11 @@ export default function Gallery() {
                     </p>
                   </div>
 
-                  <div className="space-y-6 pt-12 border-t border-white/5">
-                     <button onClick={handleDownload} className="w-full py-5 bg-gold text-[#0a0a0a] font-black uppercase tracking-[0.6em] text-[0.7rem] flex items-center justify-center">
+                  <div className="space-y-6 pt-12 border-t border-gold/10">
+                     <button onClick={handleDownload} className="w-full py-5 bg-gold text-premium-white font-black uppercase tracking-[0.6em] text-[0.7rem] flex items-center justify-center">
                         <Download size={16} className="mr-4" /> Download Original
                      </button>
-                     <button onClick={handleShare} className="w-full py-5 border border-white/10 text-white font-black uppercase tracking-[0.6em] text-[0.7rem] flex items-center justify-center">
+                     <button onClick={handleShare} className="w-full py-5 border border-gold/20 text-white font-black uppercase tracking-[0.6em] text-[0.7rem] flex items-center justify-center">
                         <Share2 size={16} className="mr-4" /> Copy Share Link
                      </button>
                   </div>
