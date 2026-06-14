@@ -16,10 +16,12 @@ import Sponsors from './pages/Sponsors';
 import Contact from './pages/Contact';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import CEO from './pages/CEO';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
     <BrowserRouter basename="/rajasthan-glamour-week-2026">
+      <ScrollToTop />
       <Routes>
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/ceo" element={<CEO />} />
