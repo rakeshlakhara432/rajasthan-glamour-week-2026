@@ -58,12 +58,12 @@ export default function Footer() {
             <h4 className="text-gold font-black uppercase tracking-[0.4em] text-[0.6rem] mb-10">Corporate Credits</h4>
             <div className="space-y-6 text-[0.65rem] uppercase tracking-[0.2em] font-black">
                 <div className="border-l border-gold/30 pl-4">
-                    <p className="text-white/20 mb-1">Founder</p>
-                    <p className="text-white">Prince Laxkar</p>
-                </div>
-                <div className="border-l border-gold/30 pl-4">
                     <p className="text-white/20 mb-1">Organiser</p>
                     <p className="text-white">Naksh Lakhara</p>
+                </div>
+                <div className="border-l border-gold/30 pl-4">
+                    <p className="text-white/20 mb-1">Founder</p>
+                    <p className="text-white">Prince Laxkar</p>
                 </div>
             </div>
           </div>

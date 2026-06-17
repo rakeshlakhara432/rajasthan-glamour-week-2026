@@ -4,6 +4,7 @@
  */
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import Layout from './layouts/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -16,9 +17,21 @@ import Sponsors from './pages/Sponsors';
 import Contact from './pages/Contact';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import CEO from './pages/CEO';
+import ParticipateMembers from './pages/ParticipateMembers';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
+  useEffect(() => {
+    const navEntries = window.performance.getEntriesByType("navigation");
+    if (navEntries.length > 0) {
+      const navType = (navEntries[0] as PerformanceNavigationTiming).type;
+      const path = window.location.pathname;
+      if (navType === "reload" && path !== "/rajasthan-glamour-week-2026" && path !== "/rajasthan-glamour-week-2026/") {
+        window.location.replace("/rajasthan-glamour-week-2026/");
+      }
+    }
+  }, []);
+
   return (
     <BrowserRouter basename="/rajasthan-glamour-week-2026">
       <ScrollToTop />
@@ -34,6 +47,7 @@ export default function App() {
           <Route path="models" element={<Models />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="sponsors" element={<Sponsors />} />
+          <Route path="participate-members" element={<ParticipateMembers />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

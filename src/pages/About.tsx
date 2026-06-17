@@ -6,7 +6,8 @@ export default function About() {
   const images = {
     backstage: "/rajasthan-glamour-week-2026/images/fashion_backstage_1780979727578.png",
     detail: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png",
-    hero: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png"
+    hero: "/rajasthan-glamour-week-2026/images/hero_fashion_desert_1780979678685.png",
+    runway: "/rajasthan-glamour-week-2026/images/runway_glamour_1780979695640.png"
   };
 
   const timeline = [
@@ -35,8 +36,8 @@ export default function About() {
   ];
 
   const team = [
-    { name: "Prince Laxkar", role: "Founder & Visionary", image: images.hero },
-    { name: "Naksh Lakhara", role: "Organiser & Director", image: images.backstage },
+    { name: "Naksh Lakhara", role: "Organiser & Director", image: images.runway },
+    { name: "Prince Laxkar", role: "Founder & Visionary", image: images.backstage },
     { name: "Sanya Rathore", role: "Head of Curation", image: images.detail },
     { name: "Vikram Singh", role: "Technical Director", image: images.hero }
   ];
@@ -136,30 +137,11 @@ export default function About() {
       <section className="py-40 bg-[#0e0e0e] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row gap-24 lg:gap-40">
-            {/* Founder Message */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex-1 space-y-12"
-            >
-              <div className="w-32 h-[1px] bg-gold mb-12" />
-              <Quote className="text-gold opacity-20" size={64} />
-              <h3 className="text-3xl md:text-5xl font-display italic text-white tracking-tight leading-tight">
-                "Our mission is to ensure that the hands that weave Rajasthan's history are the same ones that define its future."
-              </h3>
-              <div>
-                <p className="text-white font-black uppercase tracking-[0.6em] text-[0.7rem] mb-2 text-gold">Prince Laxkar</p>
-                <p className="text-white/30 text-[0.55rem] uppercase tracking-[0.4em] font-black">Founder & Visionary</p>
-              </div>
-            </motion.div>
-
             {/* Director Message */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
               className="flex-1 space-y-12"
             >
               <div className="w-32 h-[1px] bg-gold mb-12" />
@@ -170,6 +152,25 @@ export default function About() {
               <div>
                 <p className="text-white font-black uppercase tracking-[0.6em] text-[0.7rem] mb-2 text-gold">Naksh Lakhara</p>
                 <p className="text-white/30 text-[0.55rem] uppercase tracking-[0.4em] font-black">Organiser & Director</p>
+              </div>
+            </motion.div>
+
+            {/* Founder Message */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex-1 space-y-12"
+            >
+              <div className="w-32 h-[1px] bg-gold mb-12" />
+              <Quote className="text-gold opacity-20" size={64} />
+              <h3 className="text-3xl md:text-5xl font-display italic text-white tracking-tight leading-tight">
+                "Our mission is to ensure that the hands that weave Rajasthan's history are the same ones that define its future."
+              </h3>
+              <div>
+                <p className="text-white font-black uppercase tracking-[0.6em] text-[0.7rem] mb-2 text-gold">Prince Laxkar</p>
+                <p className="text-white/30 text-[0.55rem] uppercase tracking-[0.4em] font-black">Founder & Visionary</p>
               </div>
             </motion.div>
           </div>

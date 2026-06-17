@@ -1,7 +1,9 @@
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight, 
   ChevronRight, 
+  ChevronLeft,
+  X, 
   Star, 
   Quote, 
   Clock, 
@@ -17,7 +19,7 @@ import {
   Briefcase,
   Play
 } from 'lucide-react';
-import { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const CountdownTimer = () => {
@@ -27,24 +29,39 @@ const CountdownTimer = () => {
     minutes: 0,
     seconds: 0
   });
+  const [isEnded, setIsEnded] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date('2026-10-15T00:00:00').getTime();
+    const targetDate = new Date('2026-06-24T00:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const difference = targetDate - now;
 
-      setTimeLeft({
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((difference % (1000 * 60)) / 1000)
-      });
+      if (difference <= 0) {
+        clearInterval(timer);
+        setIsEnded(true);
+      } else {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      }
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
+
+  if (isEnded) {
+    return (
+      <div className="flex flex-col items-center text-center animate-pulse py-4">
+        <span className="text-lg md:text-2xl font-black text-premium-white uppercase tracking-[0.3em] mb-2">Welcome to</span>
+        <span className="text-4xl md:text-6xl font-display italic text-gold drop-shadow-[0_0_15px_rgba(212,175,55,0.8)]">Rajasthan Glamour Week 2026</span>
+      </div>
+    );
+  }
 
   return (
     <div className="flex space-x-4 md:space-x-8">
@@ -65,8 +82,93 @@ const CountdownTimer = () => {
   );
 };
 
+const participateMembers = [
+  "713763898_18084231050160283_7783501389353645024_n..jpg",
+  "713983690_18084233618160283_6107113930437736616_n..jpg",
+  "714716615_18084229031160283_1404923630616934883_n..jpg",
+  "714737920_18084234161160283_1941035954667678306_n..jpg",
+  "714737932_18084234722160283_2098788392766831914_n..jpg",
+  "714748938_18084233333160283_308155537505856214_n..jpg",
+  "714759329_18084230216160283_4149130923804390072_n..jpg",
+  "714773920_18084323201160283_4573542496855824090_n..jpg",
+  "714822462_18084608492160283_607015030871107808_n..jpg",
+  "714822499_18084232028160283_6712104928233826015_n..jpg",
+  "715020302_18084238205160283_4725724166415631483_n..jpg",
+  "716470704_18084081410160283_6924609008221177542_n..heic.jpg",
+  "719172525_18084830597160283_3222696344912154076_n..jpg",
+  "719251898_18084634361160283_6388705463344467252_n..jpg",
+  "719463132_18084965339160283_3694828407693425451_n..jpg",
+  "719491018_18085066931160283_1882839929496687293_n..jpg",
+  "719828405_18084671213160283_3838396923776626968_n..jpg",
+  "719919247_18085257110160283_5221205691948901855_n..jpg",
+  "720086644_18084740177160283_5620933501686627357_n..jpg",
+  "720126473_18085066490160283_6509778018986387322_n..jpg",
+  "720206732_18085257215160283_4519357012034317982_n..jpg",
+  "720219015_18085257140160283_1087106806644468896_n..jpg",
+  "720387007_18085257119160283_4219505321127854496_n..jpg",
+  "720398842_18085366397160283_7829854020945139250_n..jpg",
+  "720449229_18084967784160283_4456125686465575863_n..jpg",
+  "720874124_18085365545160283_2711994577341169596_n..jpg",
+  "721011023_18085278902160283_4672174404623295681_n..heic.jpg",
+  "721266167_18085257272160283_5716869140073855656_n..jpg",
+  "721310299_18085639781160283_3114507014742182413_n..jpg",
+  "721310299_18085647536160283_3824797210050577101_n..jpg",
+  "721382914_18085178390160283_776753193691238350_n..jpg",
+  "721625393_18085258376160283_1697078598971805942_n..jpg",
+  "721816926_18085178993160283_7227395715841978318_n..jpg",
+  "721950618_18085338035160283_712841465643585514_n..jpg",
+  "722036687_18085670603160283_2240335323042027585_n..jpg",
+  "722075470_18085878839160283_3221546905713657446_n..jpg",
+  "722147546_18085500059160283_3735574124844661922_n..jpg",
+  "722217854_18085890581160283_2037553242670683136_n..heic.jpg",
+  "722753006_18085995584160283_7154082775302097132_n..jpg",
+  "722934762_18085461977160283_2380273855003158852_n..jpg",
+  "722956300_18085316687160283_2915051675724914328_n..jpg",
+  "723110923_18085618238160283_6767039719693179415_n..jpg",
+  "724004909_18085678529160283_7313326225199712868_n..jpg",
+  "724004994_18085484819160283_4919830604172467334_n..jpg",
+  "724685164_18085754561160283_2358706889935656694_n..jpg"
+];
+
 export default function Home() {
   const containerRef = useRef(null);
+  const [selectedChiefGuestIdx, setSelectedChiefGuestIdx] = useState<number | null>(null);
+  const chiefGuests = [
+    "722447683_18032844623814341_5987592676423805600_n..jpg",
+    "724045546_18085586246160283_5745320394201265792_n..jpg",
+    "724257137_18085791458160283_2617155941372785964_n..jpg"
+  ];
+
+  const nextChiefGuest = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedChiefGuestIdx !== null) {
+      setSelectedChiefGuestIdx((selectedChiefGuestIdx + 1) % chiefGuests.length);
+    }
+  };
+
+  const prevChiefGuest = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedChiefGuestIdx !== null) {
+      setSelectedChiefGuestIdx((selectedChiefGuestIdx - 1 + chiefGuests.length) % chiefGuests.length);
+    }
+  };
+
+  const [selectedMemberIdx, setSelectedMemberIdx] = useState<number | null>(null);
+
+  const nextMember = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedMemberIdx !== null) {
+      setSelectedMemberIdx((selectedMemberIdx + 1) % participateMembers.length);
+    }
+  };
+
+  const prevMember = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedMemberIdx !== null) {
+      setSelectedMemberIdx((selectedMemberIdx - 1 + participateMembers.length) % participateMembers.length);
+    }
+  };
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -99,17 +201,12 @@ export default function Home() {
     <div className="overflow-hidden bg-transparent">
       {/* Hero Section */}
       <section ref={containerRef} className="relative h-screen flex items-center overflow-hidden">
-        <motion.div style={{ y }} className="absolute inset-0 z-0">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-full h-full object-cover scale-110 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-[3s]"
-            poster={images.hero}
-          >
-            <source src={images.videoPlaceholder} type="video/mp4" />
-          </video>
+        <motion.div style={{ y }} className="absolute inset-0 z-0 group">
+          <img 
+            src={images.hero}
+            alt="Rajasthan Glamour Week 2026"
+            className="w-full h-full object-cover scale-110 opacity-60 grayscale group-hover:grayscale-0 transition-all duration-[3s]"
+          />
           <motion.div style={{ opacity }} className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-transparent to-[#0a0a0a]" />
         </motion.div>
         
@@ -122,10 +219,13 @@ export default function Home() {
               className="lg:col-span-8 text-white"
             >
               <span className="text-gold font-black uppercase tracking-[1em] text-[0.6rem] mb-8 block">Inaugural Phase • October 2026</span>
-              <h1 id="hero-title" className="text-5xl sm:text-[6vw] lg:text-[4rem] xl:text-[5.5rem] font-bold mb-8 md:mb-12 leading-[0.9] tracking-tighter uppercase font-black mix-blend-difference drop-shadow-2xl">
+              <h1 id="hero-title" className="text-5xl sm:text-[6vw] lg:text-[4rem] xl:text-[5.5rem] font-bold mb-4 md:mb-6 leading-[0.9] tracking-tighter uppercase font-black mix-blend-difference drop-shadow-2xl">
                 ROYALTY <br />
                 <span className="italic font-normal text-gold block lg:inline">MEETS</span> RUNWAY
               </h1>
+              <p className="text-2xl md:text-4xl text-premium-white font-light tracking-[0.2em] mb-8 md:mb-12 uppercase drop-shadow-lg">
+                Rajasthan Glamour Week 2026
+              </p>
               
               <div className="flex flex-wrap gap-8 md:gap-16 mt-12 md:mt-20 pb-12 border-b border-gold/10 lg:w-fit">
                 <div className="space-y-4">
@@ -162,6 +262,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Event Banner Section */}
+      <section className="py-12 bg-transparent border-b border-gold/10">
+        <div className="container mx-auto px-6">
+          <div className="w-full overflow-hidden shadow-2xl border border-gold/20">
+            <img 
+              src="/rajasthan-glamour-week-2026/images/event_banner.jpg" 
+              alt="Rajasthan Glamour Week Event Banner"
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-24 border-y border-gold/10 relative bg-transparent overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.03),transparent_50%)]" />
@@ -191,6 +304,157 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Special Chief Guest Section */}
+      <section className="py-24 bg-transparent relative overflow-hidden border-b border-gold/20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-24">
+             <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] mb-6 block underline underline-offset-[12px] decoration-gold/20">Special Dignitaries</span>
+             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase italic text-premium-white">Chief <br />Guests</h2>
+          </div>
+
+          <div className="flex flex-nowrap overflow-x-auto gap-8 pb-12 no-scrollbar">
+            {chiefGuests.map((filename, idx) => (
+              <motion.div
+                key={idx}
+                className="flex-shrink-0 w-[280px] md:w-[350px] group cursor-pointer"
+                onClick={() => setSelectedChiefGuestIdx(idx)}
+              >
+                <div className="aspect-[3/4] overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-xl border border-gold/10">
+                    <img src={`/rajasthan-glamour-week-2026/images/special-chief-guest/${filename}`} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <AnimatePresence>
+            {selectedChiefGuestIdx !== null && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+                onClick={() => setSelectedChiefGuestIdx(null)}
+              >
+                <div className="relative" onClick={(e) => e.stopPropagation()}>
+                  <motion.img
+                    key={selectedChiefGuestIdx}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                    src={`/rajasthan-glamour-week-2026/images/special-chief-guest/${chiefGuests[selectedChiefGuestIdx]}`}
+                    alt={`Chief Guest ${selectedChiefGuestIdx + 1}`}
+                    className="max-w-[85vw] max-h-[80vh] object-contain shadow-2xl border-2 border-gold/30 rounded-lg relative z-40"
+                  />
+
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); setSelectedChiefGuestIdx(null); }}
+                    className="absolute -top-5 -right-5 md:-top-6 md:-right-6 text-white transition-colors z-[110] flex items-center gap-2 bg-red-600 px-4 py-2 rounded-full border-2 border-white/50 hover:bg-red-700 shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+                  >
+                    <span className="text-[0.6rem] font-black uppercase tracking-[0.2em]">Close</span>
+                    <X size={20} strokeWidth={3} />
+                  </button>
+                </div>
+
+                <button 
+                  onClick={prevChiefGuest}
+                  className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2 z-[110] bg-black/50 rounded-full border border-white/10"
+                >
+                  <ChevronLeft size={40} />
+                </button>
+
+                <button 
+                  onClick={nextChiefGuest}
+                  className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2 z-[110] bg-black/50 rounded-full border border-white/10"
+                >
+                  <ChevronRight size={40} />
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Participating Members Slider Section */}
+      <section className="py-24 bg-royal-dark/20 relative overflow-hidden border-b border-gold/10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_70%)]" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-20">
+             <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] mb-6 block underline underline-offset-[12px] decoration-gold/20">The Talents</span>
+             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase italic text-premium-white">Participating <br />Members</h2>
+          </div>
+
+          <div className="flex flex-nowrap overflow-x-auto gap-6 pb-16 pt-8 px-4 no-scrollbar snap-x snap-mandatory">
+            {participateMembers.map((filename, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -15, rotate: 0, scale: 1.05 }}
+                initial={{ rotate: idx % 2 === 0 ? 2 : -2 }}
+                className="flex-shrink-0 w-[180px] md:w-[240px] snap-center group cursor-pointer relative"
+                onClick={() => setSelectedMemberIdx(idx)}
+              >
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/10 relative z-10 group-hover:border-gold/40 transition-colors duration-500 bg-black">
+                    <img 
+                      src={`/rajasthan-glamour-week-2026/images/participate-members/${filename}`} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0" 
+                      loading="lazy"
+                      alt={`Member ${idx + 1}`}
+                    />
+                </div>
+                <div className="absolute -bottom-4 inset-x-4 h-12 bg-gold/10 blur-xl -z-10 group-hover:bg-gold/30 transition-colors duration-500" />
+              </motion.div>
+            ))}
+          </div>
+
+          <AnimatePresence>
+            {selectedMemberIdx !== null && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+                onClick={() => setSelectedMemberIdx(null)}
+              >
+                <div className="relative" onClick={(e) => e.stopPropagation()}>
+                  <motion.img
+                    key={selectedMemberIdx}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                    src={`/rajasthan-glamour-week-2026/images/participate-members/${participateMembers[selectedMemberIdx]}`}
+                    alt={`Member ${selectedMemberIdx + 1}`}
+                    className="max-w-[85vw] max-h-[80vh] object-contain shadow-2xl border-2 border-gold/30 rounded-lg relative z-40"
+                  />
+
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); setSelectedMemberIdx(null); }}
+                    className="absolute -top-5 -right-5 md:-top-6 md:-right-6 text-white transition-colors z-[110] flex items-center gap-2 bg-red-600 px-4 py-2 rounded-full border-2 border-white/50 hover:bg-red-700 shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+                  >
+                    <span className="text-[0.6rem] font-black uppercase tracking-[0.2em]">Close</span>
+                    <X size={20} strokeWidth={3} />
+                  </button>
+                </div>
+
+                <button 
+                  onClick={prevMember}
+                  className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2 z-[110] bg-black/50 rounded-full border border-white/10"
+                >
+                  <ChevronLeft size={40} />
+                </button>
+
+                <button 
+                  onClick={nextMember}
+                  className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2 z-[110] bg-black/50 rounded-full border border-white/10"
+                >
+                  <ChevronRight size={40} />
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </section>
+
       {/* Fashion Week Highlights */}
       <section className="py-40 bg-royal-dark/40 backdrop-blur-md relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-royal-dark/40 backdrop-blur-md/50 -z-0" />
@@ -356,7 +620,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
-            {/* Founder */}
+            {/* Organiser */}
             <motion.div 
                initial={{ opacity: 0, y: 50 }}
                whileInView={{ opacity: 1, y: 0 }}
@@ -364,20 +628,20 @@ export default function Home() {
                className="group relative"
             >
                 <div className="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000">
-                    <img src={images.backstage} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Founder" />
+                    <img src={images.runway} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Organiser" />
                 </div>
                 <div className="absolute -bottom-12 -right-12 bg-gold p-12 shadow-2xl transition-transform group-hover:-translate-y-4">
-                    <p className="text-white font-black uppercase tracking-[0.4em] text-[0.6rem] mb-2">The Founder</p>
-                    <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-white">Prince Laxkar</h3>
+                    <p className="text-white font-black uppercase tracking-[0.4em] text-[0.6rem] mb-2">The Organiser</p>
+                    <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-white">Naksh Lakhara</h3>
                 </div>
                 <div className="mt-20 max-w-sm">
                     <p className="text-white/40 text-sm italic leading-relaxed">
-                        Envisioning a global platform that preserves the heritage of Rajasthan while embracing contemporary high-fashion ideals.
+                        Curating a seamless confluence of talent, resources, and royal aesthetics to execute India's most prestigious fashion week.
                     </p>
                 </div>
             </motion.div>
 
-            {/* Organiser */}
+            {/* Founder */}
             <motion.div 
                initial={{ opacity: 0, y: 50 }}
                whileInView={{ opacity: 1, y: 0 }}
@@ -386,15 +650,15 @@ export default function Home() {
                className="group relative md:mt-40"
             >
                 <div className="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000">
-                    <img src={images.runway} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Organiser" />
+                    <img src={images.backstage} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Founder" />
                 </div>
                 <div className="absolute -bottom-12 -left-12 bg-royal-dark/40 backdrop-blur-md p-12 shadow-2xl transition-transform group-hover:-translate-y-4 border border-gold/20">
-                    <p className="text-premium-white/40 font-black uppercase tracking-[0.4em] text-[0.6rem] mb-2">The Organiser</p>
-                    <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-white">Naksh Lakhara</h3>
+                    <p className="text-premium-white/40 font-black uppercase tracking-[0.4em] text-[0.6rem] mb-2">The Founder</p>
+                    <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-white">Prince Laxkar</h3>
                 </div>
                 <div className="mt-20 max-w-sm ml-auto text-right">
                     <p className="text-white/40 text-sm italic leading-relaxed">
-                        Curating a seamless confluence of talent, resources, and royal aesthetics to execute India's most prestigious fashion week.
+                        Envisioning a global platform that preserves the heritage of Rajasthan while embracing contemporary high-fashion ideals.
                     </p>
                 </div>
             </motion.div>
@@ -406,9 +670,14 @@ export default function Home() {
       <section className="py-40 bg-transparent text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(197,160,89,0.1),transparent_60%)]" />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-32">
+          <div className="text-center mb-24">
             <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.7rem] block mb-10 underline underline-offset-[16px] decoration-gold/20">Elite Incentives</span>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic leading-[0.85]">★ Exciting Rewards <br /><span className="text-gold font-sans not-italic">For The Winner ★</span></h2>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic leading-[0.85] mb-12">★ Exciting Rewards <br /><span className="text-gold font-sans not-italic">For The Winner ★</span></h2>
+            <div className="max-w-4xl mx-auto p-8 border border-gold/30 bg-gold/5 backdrop-blur-md rounded-sm shadow-[0_0_30px_rgba(212,175,55,0.1)]">
+               <p className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed">
+                 इस कार्यक्रम के विजेताओं को भी बेहतरीन अवसर प्रदान किए जाएंगे, जिनमें मोंट्रोस रनवे फैशन शो गोवा में भाग लेने का मौका, Goa Trip, Media Coverage, Industry Connections तथा Bollywood Movie, Song और Web Series में काम करने का मौका देंगे ।।
+               </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
@@ -521,6 +790,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Strategic Guilds / Partners Section */}
+      <section className="py-32 bg-[#0a0a0a] border-y border-gold/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.03)_0%,transparent_70%)]" />
+        
+        <div className="container mx-auto px-6 relative z-10 text-center mb-20">
+          <span className="text-gold font-black uppercase tracking-[0.8em] text-[0.6rem] mb-6 block underline underline-offset-[12px] decoration-gold/20">Our Exclusive Partners</span>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-premium-white">Strategic <br /><span className="text-gold not-italic">Guilds</span></h2>
+        </div>
+
+        <div className="container mx-auto px-6 mb-24 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-items-center opacity-60 hover:opacity-100 transition-opacity duration-1000">
+               {['VOGUE INDIA', 'SABYASACHI', 'GQ MAGAZINE', 'TAJ HOTELS', 'MANISH MALHOTRA'].map((partner, idx) => (
+                 <div key={idx} className="p-4 group cursor-pointer text-center">
+                    <span className="text-xl md:text-2xl font-display text-white/50 group-hover:text-gold transition-colors duration-500 tracking-widest uppercase block">{partner}</span>
+                    <div className="w-0 h-[1px] bg-gold mx-auto mt-2 group-hover:w-full transition-all duration-500" />
+                 </div>
+               ))}
+            </div>
+        </div>
+
+        <div className="flex justify-center relative z-10">
+          <Link to="/contact" className="group flex items-center gap-6 bg-royal-dark/80 backdrop-blur-md px-10 py-5 border-2 border-gold/30 hover:border-gold hover:bg-gold/10 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-all duration-500 rounded-sm">
+             <span className="text-[0.65rem] font-black uppercase tracking-[0.5em] text-white group-hover:text-gold transition-colors">Inquire For Partnership</span>
+             <ChevronRight size={18} className="text-gold group-hover:translate-x-2 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
       {/* Quote/Trust Section - Refined with New Leadership */}
       <section className="py-40 bg-transparent text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(197,160,89,0.08)_0%,transparent_70%)]" />
@@ -542,13 +839,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-4xl mx-auto">
             <div className="flex flex-col items-center">
                 <div className="w-16 h-[1px] bg-gold mb-6 opacity-30" />
-                <p className="text-gold uppercase tracking-[0.6em] font-black text-[0.7rem] mb-2">Prince Laxkar</p>
-                <p className="text-white/20 text-[0.55rem] uppercase tracking-[0.4em] font-medium">Founder & Primary Visionary</p>
+                <p className="text-gold uppercase tracking-[0.6em] font-black text-[0.7rem] mb-2">Naksh Lakhara</p>
+                <p className="text-white/20 text-[0.55rem] uppercase tracking-[0.4em] font-medium">Chief Organiser & Curator</p>
             </div>
             <div className="flex flex-col items-center">
                 <div className="w-16 h-[1px] bg-gold mb-6 opacity-30" />
-                <p className="text-gold uppercase tracking-[0.6em] font-black text-[0.7rem] mb-2">Naksh Lakhara</p>
-                <p className="text-white/20 text-[0.55rem] uppercase tracking-[0.4em] font-medium">Chief Organiser & Curator</p>
+                <p className="text-gold uppercase tracking-[0.6em] font-black text-[0.7rem] mb-2">Prince Laxkar</p>
+                <p className="text-white/20 text-[0.55rem] uppercase tracking-[0.4em] font-medium">Founder & Primary Visionary</p>
             </div>
           </div>
         </div>

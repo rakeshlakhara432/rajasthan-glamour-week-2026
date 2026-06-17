@@ -31,11 +31,12 @@ export default function Header() {
     { name: 'Models', path: '/models' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Sponsors', path: '/sponsors' },
+    { name: 'Members', path: '/participate-members' },
     { name: 'Contact', path: '/contact' },
   ];
 
-  const leftNav = navGroups.slice(0, 4);
-  const rightNav = navGroups.slice(4);
+  const leftNav = navGroups.slice(0, 5);
+  const rightNav = navGroups.slice(5);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
