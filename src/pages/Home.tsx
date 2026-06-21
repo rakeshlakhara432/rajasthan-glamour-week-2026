@@ -207,7 +207,7 @@ export default function Home() {
             alt="Rajasthan Glamour Week 2026"
             className="w-full h-full object-cover scale-110 opacity-60 grayscale group-hover:grayscale-0 transition-all duration-[3s]"
           />
-          <motion.div style={{ opacity }} className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-transparent to-[#0a0a0a]" />
+          <motion.div style={{ opacity }} className="absolute inset-0 bg-gradient-to-b from-[#030105]/80 via-transparent to-[#030105]" />
         </motion.div>
         
         <div className="container mx-auto px-6 relative z-10 pt-32 md:pt-40">
@@ -227,7 +227,7 @@ export default function Home() {
                 Rajasthan Glamour Week 2026
               </p>
               
-              <div className="flex flex-wrap gap-8 md:gap-16 mt-12 md:mt-20 pb-12 border-b border-gold/10 lg:w-fit">
+              <div className="flex flex-wrap gap-8 md:gap-16 mt-12 md:mt-20 lg:w-fit glass-panel rounded-3xl p-6 md:p-10 border border-white/10 glass-panel-hover">
                 <div className="space-y-4">
                   <p className="text-[0.55rem] font-black uppercase tracking-[0.6em] text-white/20">The Countdown</p>
                   <CountdownTimer />
@@ -265,7 +265,7 @@ export default function Home() {
       {/* Event Banner Section */}
       <section className="py-12 bg-transparent border-b border-gold/10">
         <div className="container mx-auto px-6">
-          <div className="w-full overflow-hidden shadow-2xl border border-gold/20">
+          <div className="w-full overflow-hidden shadow-2xl border border-white/10">
             <img 
               src="/rajasthan-glamour-week-2026/images/event_banner.jpg" 
               alt="Rajasthan Glamour Week Event Banner"
@@ -319,7 +319,7 @@ export default function Home() {
                 className="flex-shrink-0 w-[280px] md:w-[350px] group cursor-pointer"
                 onClick={() => setSelectedChiefGuestIdx(idx)}
               >
-                <div className="aspect-[3/4] overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-xl border border-gold/10">
+                <div className="aspect-[3/4] overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-xl border border-white/10">
                     <img src={`/rajasthan-glamour-week-2026/images/special-chief-guest/${filename}`} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 </div>
               </motion.div>
@@ -376,7 +376,7 @@ export default function Home() {
       </section>
 
       {/* Participating Members Slider Section */}
-      <section className="py-24 bg-royal-dark/20 relative overflow-hidden border-b border-gold/10">
+      <section className="py-24 glass-panel rounded-3xl relative overflow-hidden border-b border-gold/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_70%)]" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
@@ -456,8 +456,8 @@ export default function Home() {
       </section>
 
       {/* Fashion Week Highlights */}
-      <section className="py-40 bg-royal-dark/40 backdrop-blur-md relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-royal-dark/40 backdrop-blur-md/50 -z-0" />
+      <section className="py-40 glass-panel rounded-[3rem] relative overflow-hidden mx-4 my-12 shadow-[0_0_50px_rgba(229,193,88,0.05)]">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 backdrop-blur-md/50 -z-0" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24">
             <div className="max-w-2xl">
@@ -506,14 +506,14 @@ export default function Home() {
               <motion.div
                 key={idx}
                 whileHover={{ y: -15 }}
-                className="p-12 md:p-16 border border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-3xl relative group text-center"
+                className="p-12 md:p-16 border border-white/10 glass-panel rounded-3xl relative group text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-8 border border-gold/20 group-hover:bg-gold group-hover:scale-110 transition-all duration-700">
+                <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-8 border border-white/10 group-hover:bg-gold group-hover:scale-110 transition-all duration-700">
                     <role.icon size={24} className="text-gold group-hover:text-premium-white" />
                 </div>
                 <h3 className="text-[0.6rem] font-black uppercase tracking-[0.6em] text-white/30 mb-2">{role.sub}</h3>
                 <h4 className="text-3xl font-black uppercase tracking-tighter mb-10">{role.label}</h4>
-                <Link to="/contact" className="inline-block py-4 px-8 border border-gold/20 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-gold hover:border-gold transition-all">Apply Now</Link>
+                <Link to="/contact" className="inline-block py-4 px-8 border border-white/10 text-[0.6rem] font-black uppercase tracking-[0.4em] hover:bg-gold hover:border-gold transition-all">Apply Now</Link>
               </motion.div>
             ))}
           </div>
@@ -521,7 +521,7 @@ export default function Home() {
       </section>
 
       {/* Celebrity Guest Showcase */}
-      <section className="py-24 bg-royal-dark/40 backdrop-blur-md relative overflow-hidden border-b border-gold/20">
+      <section className="py-24 glass-panel rounded-[3rem] relative overflow-hidden border border-white/10 mx-4 my-12 shadow-[0_0_50px_rgba(229,193,88,0.05)]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-24">
              <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] mb-6 block underline underline-offset-[12px] decoration-gold/20">The Guest List</span>
@@ -546,7 +546,7 @@ export default function Home() {
       </section>
 
       {/* Sponsor/Partnership Section */}
-      <section className="py-24 bg-royal-dark/40 backdrop-blur-md">
+      <section className="py-24 glass-panel rounded-[3rem] mx-4 my-12 shadow-[0_0_50px_rgba(229,193,88,0.05)] border border-white/10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-gold font-black uppercase tracking-[0.4em] text-[0.6rem] mb-4 block">Strategic Guilds</span>
@@ -593,7 +593,7 @@ export default function Home() {
               >
                 <div className="flex items-center space-x-6 mb-6">
                     <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-gold">{news.date}</span>
-                    <span className="text-[0.55rem] font-black uppercase tracking-[0.3em] text-white/20 border border-gold/20 px-3 py-1">{news.cat}</span>
+                    <span className="text-[0.55rem] font-black uppercase tracking-[0.3em] text-white/20 border border-white/10 px-3 py-1">{news.cat}</span>
                 </div>
                 <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 group-hover:text-gold transition-colors">{news.title}</h3>
                 <p className="text-white/30 font-light italic leading-relaxed text-lg mb-8">{news.desc}</p>
@@ -652,7 +652,7 @@ export default function Home() {
                 <div className="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000">
                     <img src={images.backstage} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Founder" />
                 </div>
-                <div className="absolute -bottom-12 -left-12 bg-royal-dark/40 backdrop-blur-md p-12 shadow-2xl transition-transform group-hover:-translate-y-4 border border-gold/20">
+                <div className="absolute -bottom-12 -left-12 bg-royal-dark/40 backdrop-blur-md p-12 shadow-2xl transition-transform group-hover:-translate-y-4 border border-white/10">
                     <p className="text-premium-white/40 font-black uppercase tracking-[0.4em] text-[0.6rem] mb-2">The Founder</p>
                     <h3 className="text-3xl font-black uppercase tracking-tighter text-premium-white">Prince Laxkar</h3>
                 </div>
@@ -683,7 +683,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
             <motion.div 
                whileHover={{ y: -10 }}
-               className="p-10 md:p-16 border border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-3xl relative group overflow-hidden"
+               className="p-10 md:p-16 border border-white/10 glass-panel rounded-3xl relative group overflow-hidden"
             >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <div className="text-gold mb-8 md:mb-10 text-3xl md:text-4xl italic font-display">01</div>
@@ -693,7 +693,7 @@ export default function Home() {
 
             <motion.div 
                whileHover={{ y: -10 }}
-               className="p-10 md:p-16 border border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-3xl relative group overflow-hidden"
+               className="p-10 md:p-16 border border-white/10 glass-panel rounded-3xl relative group overflow-hidden"
             >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <div className="text-gold mb-8 md:mb-10 text-3xl md:text-4xl italic font-display">02</div>
@@ -703,7 +703,7 @@ export default function Home() {
 
             <motion.div 
                whileHover={{ y: -10 }}
-               className="p-10 md:p-16 border border-gold/10 bg-royal-dark/40 backdrop-blur-md/5 backdrop-blur-3xl relative group overflow-hidden"
+               className="p-10 md:p-16 border border-white/10 glass-panel rounded-3xl relative group overflow-hidden"
             >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <div className="text-gold mb-8 md:mb-10 text-3xl md:text-4xl italic font-display">03</div>
@@ -712,7 +712,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="mt-20 md:mt-32 p-12 md:p-24 border border-gold/20 bg-gold/5 backdrop-blur-3xl text-center relative overflow-hidden group">
+          <div className="mt-20 md:mt-32 p-12 md:p-24 border border-white/10 bg-gold/5 backdrop-blur-3xl text-center relative overflow-hidden group">
             <div className="absolute inset-0 bg-gold/5 blur-[100px] -z-10" />
             <h4 className="text-2xl md:text-5xl font-display italic text-white mb-12 md:mb-16 tracking-tight">The Gateway to Industry Stardom</h4>
             <div className="flex flex-wrap justify-center gap-8 md:gap-24">
@@ -738,7 +738,7 @@ export default function Home() {
       </section>
 
       {/* Feature Section */}
-      <section className="py-24 bg-royal-dark/40 backdrop-blur-md border-y border-gold/20">
+      <section className="py-24 glass-panel rounded-[3rem] mx-4 my-12 shadow-[0_0_50px_rgba(229,193,88,0.05)] border border-white/10">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div

@@ -39,17 +39,17 @@ export default function Header() {
   const rightNav = navGroups.slice(5);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
+    <header className="fixed top-0 left-0 w-full z-50 pt-2 md:pt-6 px-2 md:px-8 pointer-events-none">
       {/* Primary Navigation Bar */}
       <div 
         className={cn(
-          "transition-all duration-700 ease-in-out",
+          "transition-all duration-700 ease-in-out rounded-full mx-auto max-w-7xl pointer-events-auto",
           isScrolled || isOpen 
-            ? "py-2 bg-royal-dark/95 backdrop-blur-md border-b border-gold/20 shadow-[0_4px_30px_rgba(212,175,55,0.1)]" 
-            : "py-4 bg-transparent border-b border-transparent"
+            ? "py-3 glass-panel px-6 md:px-10 border border-white/20" 
+            : "py-4 bg-transparent border border-transparent px-6 md:px-10"
         )}
       >
-        <div className="container mx-auto px-6 md:px-10 flex justify-between items-center">
+        <div className="flex justify-between items-center">
           {/* Desktop Left Nav */}
           <nav className="hidden lg:flex items-center space-x-6 flex-1">
             {leftNav.map((item) => (
@@ -58,7 +58,7 @@ export default function Header() {
                 to={item.path}
                 className={cn(
                   "nav-link",
-                  location.pathname === item.path ? "text-gold" : "text-white/40 hover:text-white"
+                  location.pathname === item.path ? "text-gold" : "text-white/60 hover:text-white"
                 )}
               >
                 {item.name}
@@ -68,15 +68,15 @@ export default function Header() {
 
           {/* Centered Logo */}
           <Link to="/" className="flex flex-col items-center mx-8 transform transition-transform hover:scale-105 duration-500">
-            <span className="font-display text-lg md:text-2xl font-bold tracking-[-0.05em] leading-none text-white whitespace-nowrap">
+            <span className="font-display text-lg md:text-2xl font-bold tracking-[-0.05em] leading-none text-white whitespace-nowrap drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
               RAJASTHAN
             </span>
-            <div className="flex items-center w-full mt-0.5">
-              <div className="h-[1px] flex-grow bg-gold/30" />
+            <div className="flex items-center w-full mt-0.5 opacity-80">
+              <div className="h-[1px] flex-grow bg-gold/50" />
               <span className="text-[0.4rem] md:text-[0.5rem] tracking-[0.4em] uppercase font-bold text-gold px-2 whitespace-nowrap">
                 Glamour Week
               </span>
-              <div className="h-[1px] flex-grow bg-gold/30" />
+              <div className="h-[1px] flex-grow bg-gold/50" />
             </div>
           </Link>
 
@@ -88,16 +88,16 @@ export default function Header() {
                 to={item.path}
                 className={cn(
                   "nav-link",
-                  location.pathname === item.path ? "text-gold" : "text-white/40 hover:text-white"
+                  location.pathname === item.path ? "text-gold" : "text-white/60 hover:text-white"
                 )}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gold/20">
-              <Instagram size={14} className="text-gold/40 hover:text-gold transition-colors cursor-pointer" />
-              <Facebook size={14} className="text-gold/40 hover:text-gold transition-colors cursor-pointer" />
-              <Twitter size={14} className="text-gold/40 hover:text-gold transition-colors cursor-pointer" />
+            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-white/20">
+              <Instagram size={14} className="text-white/40 hover:text-gold transition-colors cursor-pointer" />
+              <Facebook size={14} className="text-white/40 hover:text-gold transition-colors cursor-pointer" />
+              <Twitter size={14} className="text-white/40 hover:text-gold transition-colors cursor-pointer" />
             </div>
           </nav>
 
