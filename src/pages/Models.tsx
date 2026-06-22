@@ -1,24 +1,8 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Camera, CheckCircle, X, Award } from 'lucide-react';
+import { CheckCircle, X, Upload, Video } from 'lucide-react';
 import React, { useState, FormEvent } from 'react';
 
-type ModelCategory = 'female' | 'male' | 'kids';
-
-interface Model {
-  id: string;
-  name: string;
-  category: ModelCategory;
-  height: string;
-  measurements: string;
-  experience: string;
-  image: string;
-  rating: number;
-}
-
 export default function Models() {
-  const [activeCategory, setActiveCategory] = useState<ModelCategory | 'all'>('all');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedModel, setSelectedModel] = useState<Model | null>(null);
   const [showRegForm, setShowRegForm] = useState(false);
   const [regSuccess, setRegSuccess] = useState(false);
 
@@ -207,71 +191,6 @@ export default function Models() {
             >
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
             </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Profile Details Modal */}
-      <AnimatePresence>
-        {selectedModel && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-transparent/95 backdrop-blur-3xl"
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="w-full max-w-5xl bg-[#0e0e0e] border border-gold/10 overflow-hidden flex flex-col md:flex-row relative shadow-2xl"
-            >
-              <button 
-                onClick={() => setSelectedModel(null)}
-                className="absolute top-8 right-8 z-10 w-12 h-12 bg-royal-dark/40 backdrop-blur-md/5 flex items-center justify-center text-white hover:bg-gold transition-all"
-              >
-                <X size={20} />
-              </button>
-
-              <div className="md:w-1/2 h-[500px] md:h-auto relative">
-                <img src={selectedModel.image} className="w-full h-full object-cover" alt={selectedModel.name} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] to-transparent" />
-                <div className="absolute bottom-12 left-12">
-                   <span className="text-gold font-black uppercase tracking-[0.4em] text-[0.6rem] block mb-2">{selectedModel.category} Talent</span>
-                   <h2 className="text-5xl font-black uppercase tracking-tighter text-white italic">{selectedModel.name}</h2>
-                </div>
-              </div>
-
-              <div className="md:w-1/2 p-12 md:p-20 space-y-12 bg-[#0e0e0e]">
-                 <div className="grid grid-cols-2 gap-12 text-white">
-                    <div className="space-y-2">
-                       <span className="text-white/30 text-[0.6rem] font-black uppercase tracking-[0.4em]">Height</span>
-                       <p className="font-black text-xl">{selectedModel.height}</p>
-                    </div>
-                    <div className="space-y-2">
-                       <span className="text-white/30 text-[0.6rem] font-black uppercase tracking-[0.4em]">Experience</span>
-                       <p className="font-black text-xl">{selectedModel.experience}</p>
-                    </div>
-                    <div className="space-y-2">
-                       <span className="text-white/30 text-[0.6rem] font-black uppercase tracking-[0.4em]">Measurements</span>
-                       <p className="font-black text-xl">{selectedModel.measurements}</p>
-                    </div>
-                    <div className="space-y-2">
-                       <span className="text-white/30 text-[0.6rem] font-black uppercase tracking-[0.4em]">Current Base</span>
-                       <p className="font-black text-xl uppercase italic">Milan / Jaipur</p>
-                    </div>
-                 </div>
-
-                 <div className="p-8 bg-royal-dark/40 backdrop-blur-md/5 border-l-2 border-gold">
-                    <h4 className="text-gold font-black uppercase tracking-[0.4em] text-[0.6rem] mb-4 flex items-center"><TrendingUp size={14} className="mr-3" /> Career Highlights</h4>
-                    <p className="text-white/40 text-[0.75rem] leading-relaxed uppercase tracking-[0.1em]">Worked with leading international brands including Sabyasachi, Vogue Italia, and Hermès. Winner of the 2025 Desert Glow Award.</p>
-                 </div>
-
-                 <button className="w-full py-6 bg-gold text-premium-white font-black uppercase tracking-[0.8em] text-[0.7rem] hover:bg-royal-dark/40 backdrop-blur-md transition-all shadow-2xl">
-                    Request Portfolio
-                 </button>
-              </div>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
