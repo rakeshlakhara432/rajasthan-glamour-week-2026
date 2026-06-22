@@ -1,19 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Camera, 
-  MapPin, 
-  CheckCircle, 
-  Search, 
-  ChevronRight, 
-  X, 
-  Upload, 
-  Video, 
-  Star, 
-  TrendingUp, 
-  Award,
-  Filter
-} from 'lucide-react';
-import { useState, FormEvent } from 'react';
+import { Camera, CheckCircle, X, Award } from 'lucide-react';
+import React, { useState, FormEvent } from 'react';
 
 type ModelCategory = 'female' | 'male' | 'kids';
 
@@ -42,28 +29,63 @@ export default function Models() {
     featured: "/rajasthan-glamour-week-2026/images/rajasthan_embroidery_detail_1780979709712.png"
   };
 
-  const models: Model[] = [
-    { id: '1', name: 'Zara Khanna', category: 'female', height: '178 cm', measurements: '34-24-35', experience: '5 Years', image: images.model1, rating: 5 },
-    { id: '2', name: 'Aryan Rathore', category: 'male', height: '188 cm', measurements: '40-32-38', experience: '3 Years', image: images.model2, rating: 4.8 },
-    { id: '3', name: 'Kabir Singh', category: 'male', height: '185 cm', measurements: '39-31-37', experience: '4 Years', image: images.model3, rating: 4.9 },
-    { id: '4', name: 'Ananya Mehra', category: 'female', height: '175 cm', measurements: '32-23-34', experience: '2 Years', image: images.model1, rating: 4.7 },
-    { id: '5', name: 'Rohan Verma', category: 'male', height: '190 cm', measurements: '42-34-40', experience: '7 Years', image: images.model2, rating: 5 },
-    { id: '6', name: 'Sia Malhotra', category: 'kids', height: '127 cm', measurements: 'N/A', experience: '1 Year', image: images.model3, rating: 4.6 }
+  const members = [
+    "713763898_18084231050160283_7783501389353645024_n..jpg",
+    "713983690_18084233618160283_6107113930437736616_n..jpg",
+    "714716615_18084229031160283_1404923630616934883_n..jpg",
+    "714737920_18084234161160283_1941035954667678306_n..jpg",
+    "714737932_18084234722160283_2098788392766831914_n..jpg",
+    "714748938_18084233333160283_308155537505856214_n..jpg",
+    "714759329_18084230216160283_4149130923804390072_n..jpg",
+    "714773920_18084323201160283_4573542496855824090_n..jpg",
+    "714822462_18084608492160283_607015030871107808_n..jpg",
+    "714822499_18084232028160283_6712104928233826015_n..jpg",
+    "715020302_18084238205160283_4725724166415631483_n..jpg",
+    "716470704_18084081410160283_6924609008221177542_n..heic.jpg",
+    "719172525_18084830597160283_3222696344912154076_n..jpg",
+    "719251898_18084634361160283_6388705463344467252_n..jpg",
+    "719463132_18084965339160283_3694828407693425451_n..jpg",
+    "719491018_18085066931160283_1882839929496687293_n..jpg",
+    "719828405_18084671213160283_3838396923776626968_n..jpg",
+    "719919247_18085257110160283_5221205691948901855_n..jpg",
+    "720086644_18084740177160283_5620933501686627357_n..jpg",
+    "720126473_18085066490160283_6509778018986387322_n..jpg",
+    "720206732_18085257215160283_4519357012034317982_n..jpg",
+    "720219015_18085257140160283_1087106806644468896_n..jpg",
+    "720387007_18085257119160283_4219505321127854496_n..jpg",
+    "720398842_18085366397160283_7829854020945139250_n..jpg",
+    "720449229_18084967784160283_4456125686465575863_n..jpg",
+    "720874124_18085365545160283_2711994577341169596_n..jpg",
+    "721011023_18085278902160283_4672174404623295681_n..heic.jpg",
+    "721266167_18085257272160283_5716869140073855656_n..jpg",
+    "721310299_18085639781160283_3114507014742182413_n..jpg",
+    "721310299_18085647536160283_3824797210050577101_n..jpg",
+    "721382914_18085178390160283_776753193691238350_n..jpg",
+    "721625393_18085258376160283_1697078598971805942_n..jpg",
+    "721816926_18085178993160283_7227395715841978318_n..jpg",
+    "721950618_18085338035160283_712841465643585514_n..jpg",
+    "722036687_18085670603160283_2240335323042027585_n..jpg",
+    "722075470_18085878839160283_3221546905713657446_n..jpg",
+    "722147546_18085500059160283_3735574124844661922_n..jpg",
+    "722217854_18085890581160283_2037553242670683136_n..heic.jpg",
+    "722753006_18085995584160283_7154082775302097132_n..jpg",
+    "722934762_18085461977160283_2380273855003158852_n..jpg",
+    "722956300_18085316687160283_2915051675724914328_n..jpg",
+    "723110923_18085618238160283_6767039719693179415_n..jpg",
+    "724004909_18085678529160283_7313326225199712868_n..jpg",
+    "724004994_18085484819160283_4919830604172467334_n..jpg",
+    "724685164_18085754561160283_2358706889935656694_n..jpg",
   ];
 
-  const filteredModels = models.filter(m => {
-    const matchesCategory = activeCategory === 'all' || m.category === activeCategory;
-    const matchesSearch = m.name.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const [selectedMember, setSelectedMember] = useState<number | null>(null);
 
-  const handleRegistration = (e: FormEvent) => {
-    e.preventDefault();
-    setRegSuccess(true);
-    setTimeout(() => {
-      setRegSuccess(false);
-      setShowRegForm(false);
-    }, 4000);
+  const nextMember = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedMember !== null) setSelectedMember((selectedMember + 1) % members.length);
+  };
+  const prevMember = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedMember !== null) setSelectedMember((selectedMember - 1 + members.length) % members.length);
   };
 
   return (
@@ -100,123 +122,94 @@ export default function Models() {
         </div>
       </section>
 
-      {/* Featured Model of the Month */}
-      <section className="py-40 bg-royal-dark/40 backdrop-blur-md relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-royal-dark/40 backdrop-blur-md -z-0" />
+      {/* Participating Members Gallery */}
+      <section className="py-24 bg-transparent relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_70%)]" />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-24 items-center">
-            <div className="lg:w-1/2">
-               <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] block mb-8">Hall of Excellence</span>
-               <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic text-premium-white leading-none mb-12">Featured <br /><span className="text-gold not-italic">Of the Month</span></h2>
-               <p className="text-white/60 italic text-xl leading-relaxed mb-12 max-w-xl">
-                 "A breathtaking representation of desert grace. Zara Khanna has redefined the imperial aesthetic for Season 2026."
-               </p>
-               <div className="grid grid-cols-2 gap-8 mb-12 border-l-4 border-gold pl-12">
-                  <div>
-                    <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/40 block mb-2">Global Ranking</span>
-                    <span className="text-2xl font-black text-premium-white">#01 IN PORTFOLIO</span>
-                  </div>
-                  <div>
-                    <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-white/40 block mb-2">Trust Score</span>
-                    <span className="text-2xl font-black text-gold">99.8% READY</span>
-                  </div>
-               </div>
-               <button className="flex items-center space-x-6 text-premium-white font-black uppercase tracking-[0.8em] text-[0.7rem] group">
-                  <span>View Full Profile</span>
-                  <ChevronRight size={16} className="group-hover:translate-x-4 transition-transform text-gold" />
-               </button>
-            </div>
-            <div className="lg:w-1/2 aspect-[3/4] relative">
-               <img src={images.model1} className="w-full h-full object-cover shadow-2xl grayscale hover:grayscale-0 transition-all duration-[2s]" alt="Featured Model" />
-               <div className="absolute -bottom-10 -left-10 bg-transparent p-12 text-white shadow-2xl border border-gold/10">
-                  <h3 className="text-3xl font-black tracking-tighter uppercase italic text-white">Zara Khanna</h3>
-                  <p className="text-gold text-[0.6rem] font-black uppercase tracking-[0.4em] mt-3">Elite International</p>
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Model Browser */}
-      <section className="py-40">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-24">
-            <div className="max-w-xl">
-              <span className="text-gold font-black uppercase tracking-[0.8em] text-[0.6rem] block mb-8">The Registry</span>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase text-white leading-none">Casting <br /><span className="text-gold italic font-display lowercase pl-20">inventory</span></h2>
-            </div>
-            
-            <div className="w-full lg:w-auto space-y-8">
-              <div className="flex flex-wrap gap-4 bg-royal-dark/40 backdrop-blur-md/5 p-2 backdrop-blur-2xl border border-gold/10">
-                {(['all', 'male', 'female', 'kids'] as const).map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`px-8 py-3 text-[0.55rem] font-black uppercase tracking-[0.4em] transition-all ${
-                      activeCategory === cat ? 'bg-gold text-premium-white' : 'text-white/40 hover:text-white'
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-              <div className="relative">
-                <Search size={16} className="absolute left-6 top-1/2 -translate-y-1/2 text-gold/50" />
-                <input 
-                  type="text" 
-                  placeholder="SEARCH BY NAME..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full lg:w-80 pl-16 pr-8 py-4 bg-royal-dark/40 backdrop-blur-md/5 border border-gold/20 text-white text-[0.6rem] font-black uppercase tracking-[0.2em] outline-none focus:border-gold transition-all"
-                />
-              </div>
-            </div>
+          <div className="text-center mb-20">
+            <span className="text-gold font-black uppercase tracking-[0.6em] text-[0.6rem] mb-6 block underline underline-offset-[12px] decoration-gold/20">The Talents</span>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase italic text-premium-white">Participating <br />Members</h2>
+            <p className="text-white/30 mt-6 font-light text-lg">{members.length} Selected Talents — Season 2026</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {filteredModels.map((model) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {members.map((filename, idx) => (
               <motion.div
-                key={model.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={idx}
+                whileHover={{ y: -8, scale: 1.03 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group cursor-pointer bg-royal-dark/40 backdrop-blur-md/[0.02] border border-gold/10 relative overflow-hidden"
-                onClick={() => setSelectedModel(model)}
+                transition={{ delay: idx * 0.02 }}
+                className="group cursor-pointer relative"
+                onClick={() => setSelectedMember(idx)}
               >
-                <div className="aspect-[3/4] relative overflow-hidden border-b border-gold/10">
-                  <img src={model.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[2s] group-hover:scale-110" alt={model.name} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />
-                  <div className="absolute top-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                     <span className="px-4 py-2 bg-gold text-premium-white text-[0.5rem] font-black uppercase tracking-[0.3em] flex items-center">
-                       <Award size={10} className="mr-2" /> Top Rated
-                     </span>
+                <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-2xl border border-gold/10 group-hover:border-gold/50 transition-all duration-500 bg-black">
+                  <img
+                    src={`/rajasthan-glamour-week-2026/images/participate-members/${filename}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+                    loading="lazy"
+                    alt={`Member ${idx + 1}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-3 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-gold text-[0.5rem] font-black uppercase tracking-[0.3em]">View Photo</span>
                   </div>
                 </div>
-                <div className="p-10">
-                  <div className="flex justify-between items-start mb-6">
-                    <h3 className="text-2xl font-black uppercase tracking-tighter text-white group-hover:text-gold transition-colors">{model.name}</h3>
-                    <div className="flex items-center text-gold">
-                      <Star size={12} fill="currentColor" />
-                      <span className="text-[0.7rem] font-black ml-2">{model.rating}</span>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 border-t border-gold/10 pt-8 mb-4">
-                    <div>
-                      <span className="text-[0.55rem] font-black uppercase tracking-[0.2em] text-white/30 block">Height</span>
-                      <span className="text-[0.7rem] text-white uppercase font-black">{model.height}</span>
-                    </div>
-                    <div>
-                      <span className="text-[0.55rem] font-black uppercase tracking-[0.2em] text-white/30 block">Exp.</span>
-                      <span className="text-[0.7rem] text-white uppercase font-black">{model.experience}</span>
-                    </div>
-                  </div>
-                </div>
+                <div className="absolute -bottom-3 inset-x-2 h-8 bg-gold/10 blur-xl -z-10 group-hover:bg-gold/30 transition-colors duration-500" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Member Lightbox */}
+      <AnimatePresence>
+        {selectedMember !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[9999] bg-black/96 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setSelectedMember(null)}
+          >
+            <div className="relative" onClick={(e) => e.stopPropagation()}>
+              <motion.img
+                key={selectedMember}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                src={`/rajasthan-glamour-week-2026/images/participate-members/${members[selectedMember]}`}
+                alt={`Member ${selectedMember + 1}`}
+                className="max-w-[85vw] max-h-[80vh] object-contain shadow-2xl border-2 border-gold/30 rounded-lg"
+              />
+              <button
+                onClick={(e) => { e.stopPropagation(); setSelectedMember(null); }}
+                className="absolute -top-5 -right-5 md:-top-6 md:-right-6 text-white z-[110] flex items-center gap-2 bg-red-600 px-4 py-2 rounded-full border-2 border-white/50 hover:bg-red-700 shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+              >
+                <span className="text-[0.6rem] font-black uppercase tracking-[0.2em]">Close</span>
+                <X size={20} strokeWidth={3} />
+              </button>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-gold/60 text-[0.6rem] font-black uppercase tracking-[0.3em]">
+                {selectedMember + 1} / {members.length}
+              </div>
+            </div>
+            <button
+              onClick={prevMember}
+              className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2 z-[110] bg-black/50 rounded-full border border-white/10"
+            >
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button
+              onClick={nextMember}
+              className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2 z-[110] bg-black/50 rounded-full border border-white/10"
+            >
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Profile Details Modal */}
       <AnimatePresence>

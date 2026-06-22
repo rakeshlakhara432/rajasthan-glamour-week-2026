@@ -47,7 +47,7 @@ export default function Footer() {
             <li><Link to="/designers" className="hover:text-white hover:translate-x-2 transition-all block">The Couturiers</Link></li>
             <li><Link to="/contact" className="hover:text-white hover:translate-x-2 transition-all block">Acquisition Portal</Link></li>
             <li><Link to="/sponsors" className="hover:text-white hover:translate-x-2 transition-all block">Strategic Guilds</Link></li>
-            <li><Link to="/participate-members" className="hover:text-white hover:translate-x-2 transition-all block">The Talents</Link></li>
+
           </ul>
         </div>
 

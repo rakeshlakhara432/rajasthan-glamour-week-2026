@@ -17,7 +17,7 @@ import Sponsors from './pages/Sponsors';
 import Contact from './pages/Contact';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import CEO from './pages/CEO';
-import ParticipateMembers from './pages/ParticipateMembers';
+
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -47,7 +47,7 @@ export default function App() {
           <Route path="models" element={<Models />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="sponsors" element={<Sponsors />} />
-          <Route path="participate-members" element={<ParticipateMembers />} />
+
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

@@ -31,7 +31,6 @@ export default function Header() {
     { name: 'Models', path: '/models' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Sponsors', path: '/sponsors' },
-    { name: 'Members', path: '/participate-members' },
     { name: 'Contact', path: '/contact' },
   ];
 
