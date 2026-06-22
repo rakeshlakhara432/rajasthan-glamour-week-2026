@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import Layout from './layouts/Layout';
 import Home from './pages/Home';
@@ -21,19 +21,8 @@ import CEO from './pages/CEO';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
-  useEffect(() => {
-    const navEntries = window.performance.getEntriesByType("navigation");
-    if (navEntries.length > 0) {
-      const navType = (navEntries[0] as PerformanceNavigationTiming).type;
-      const path = window.location.pathname;
-      if (navType === "reload" && path !== "/rajasthan-glamour-week-2026" && path !== "/rajasthan-glamour-week-2026/") {
-        window.location.replace("/rajasthan-glamour-week-2026/");
-      }
-    }
-  }, []);
-
   return (
-    <BrowserRouter basename="/rajasthan-glamour-week-2026">
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/admin" element={<AdminDashboard />} />
@@ -51,6 +40,6 @@ export default function App() {
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

@@ -72,6 +72,11 @@ export default function Models() {
     if (selectedMember !== null) setSelectedMember((selectedMember - 1 + members.length) % members.length);
   };
 
+  const handleRegistration = (e: FormEvent) => {
+    e.preventDefault();
+    setRegSuccess(true);
+  };
+
   return (
     <div className="min-h-screen pt-24 bg-transparent">
       {/* Hero Section */}
