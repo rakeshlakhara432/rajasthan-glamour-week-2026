@@ -20,8 +20,12 @@ export default function Footer() {
             "The pinnacle of fashion excellence. Celebrating the sacred intersection of royal heritage and contemporary haute couture."
           </p>
           <div className="flex space-x-6">
-            <Instagram className="text-white/40 hover:text-gold hover:scale-110 transition-all cursor-pointer" size={20} />
-            <Facebook className="text-white/40 hover:text-gold hover:scale-110 transition-all cursor-pointer" size={20} />
+            <a href="https://www.instagram.com/rajasthan_glamour_week" target="_blank" rel="noopener noreferrer">
+              <Instagram className="text-white/40 hover:text-gold hover:scale-110 transition-all cursor-pointer" size={20} />
+            </a>
+            <a href="https://m.facebook.com/profile.php?id=1074510172421874" target="_blank" rel="noopener noreferrer">
+              <Facebook className="text-white/40 hover:text-gold hover:scale-110 transition-all cursor-pointer" size={20} />
+            </a>
             <Twitter className="text-white/40 hover:text-gold hover:scale-110 transition-all cursor-pointer" size={20} />
           </div>
         </div>

@@ -218,7 +218,6 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.2 }}
               className="lg:col-span-8 text-white"
             >
-              <span className="text-gold font-black uppercase tracking-[1em] text-[0.6rem] mb-8 block">Inaugural Phase • October 2026</span>
               <h1 id="hero-title" className="text-5xl sm:text-[6vw] lg:text-[4rem] xl:text-[5.5rem] font-bold mb-4 md:mb-6 leading-[0.9] tracking-tighter uppercase font-black mix-blend-difference drop-shadow-2xl">
                 ROYALTY <br />
                 <span className="italic font-normal text-gold block lg:inline">MEETS</span> RUNWAY

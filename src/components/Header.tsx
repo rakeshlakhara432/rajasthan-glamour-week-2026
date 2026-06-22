@@ -95,8 +95,12 @@ export default function Header() {
               </Link>
             ))}
             <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-white/20">
-              <Instagram size={14} className="text-white/40 hover:text-gold transition-colors cursor-pointer" />
-              <Facebook size={14} className="text-white/40 hover:text-gold transition-colors cursor-pointer" />
+              <a href="https://www.instagram.com/rajasthan_glamour_week" target="_blank" rel="noopener noreferrer">
+                <Instagram size={14} className="text-white/40 hover:text-gold transition-colors cursor-pointer" />
+              </a>
+              <a href="https://m.facebook.com/profile.php?id=1074510172421874" target="_blank" rel="noopener noreferrer">
+                <Facebook size={14} className="text-white/40 hover:text-gold transition-colors cursor-pointer" />
+              </a>
               <Twitter size={14} className="text-white/40 hover:text-gold transition-colors cursor-pointer" />
             </div>
           </nav>
@@ -149,8 +153,12 @@ export default function Header() {
               <div className="flex justify-between items-center">
                 <span className="text-[0.6rem] tracking-[0.4em] uppercase text-white/60">Connect</span>
                 <div className="flex space-x-8">
-                  <Instagram size={18} className="text-white/40 hover:text-gold transition-colors" />
-                  <Facebook size={18} className="text-white/40 hover:text-gold transition-colors" />
+                  <a href="https://www.instagram.com/rajasthan_glamour_week" target="_blank" rel="noopener noreferrer">
+                    <Instagram size={18} className="text-white/40 hover:text-gold transition-colors" />
+                  </a>
+                  <a href="https://m.facebook.com/profile.php?id=1074510172421874" target="_blank" rel="noopener noreferrer">
+                    <Facebook size={18} className="text-white/40 hover:text-gold transition-colors" />
+                  </a>
                   <Twitter size={18} className="text-white/40 hover:text-gold transition-colors" />
                 </div>
               </div>

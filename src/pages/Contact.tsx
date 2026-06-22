@@ -51,7 +51,9 @@ export default function Contact() {
                     </div>
                     <div className="space-y-3">
                       <p className="text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.5em] text-white/30 font-black">Digital Presence</p>
-                      <p className="text-xl md:text-2xl font-black uppercase tracking-tighter text-gold italic group-hover:tracking-[0px] transition-all duration-500">@rajasthan_glamour_week</p>
+                      <a href="https://www.instagram.com/rajasthan_glamour_week" target="_blank" rel="noopener noreferrer">
+                        <p className="text-xl md:text-2xl font-black uppercase tracking-tighter text-gold italic group-hover:tracking-[0px] transition-all duration-500">@rajasthan_glamour_week</p>
+                      </a>
                     </div>
                   </div>
                 </div>
