@@ -134,9 +134,9 @@ export default function Home() {
   const containerRef = useRef(null);
   const [selectedChiefGuestIdx, setSelectedChiefGuestIdx] = useState<number | null>(null);
   const chiefGuests = [
-    "722447683_18032844623814341_5987592676423805600_n..jpg",
+    "724257137_18085791458160283_2617155941372785964_n..jpg",
     "724045546_18085586246160283_5745320394201265792_n..jpg",
-    "724257137_18085791458160283_2617155941372785964_n..jpg"
+    "722447683_18032844623814341_5987592676423805600_n..jpg"
   ];
 
   const nextChiefGuest = (e: React.MouseEvent) => {
